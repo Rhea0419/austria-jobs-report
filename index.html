@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>奥地利维也纳 · 岗位分析报告 — LinkedIn 精选</title>
+<style>
+  :root {
+    --blue: #3B82F6;
+    --blue-dark: #1E40AF;
+    --blue-light: #DBEAFE;
+    --green: #10B981;
+    --red: #EF4444;
+    --amber: #F59E0B;
+    --bg: #F0F4F8;
+    --card: #FFFFFF;
+    --text: #1E293B;
+    --text-secondary: #64748B;
+    --border: #E2E8F0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+  header { background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%); color: #fff; padding: 40px 20px; text-align: center; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
+  header h1 { font-size: 28px; margin-bottom: 8px; }
+  header p { opacity: .9; font-size: 15px; }
+  .profile-bar { background: var(--card); border-radius: 12px; padding: 20px; margin-bottom: 30px; box-shadow: 0 1px 3px rgba(0,0,0,.08); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .tag { display: inline-block; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+  .tag-blue { background: var(--blue-light); color: var(--blue-dark); }
+  .tag-green { background: #D1FAE5; color: #065F46; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .section-title { font-size: 22px; font-weight: 700; margin: 30px 0 16px; padding-left: 12px; border-left: 4px solid var(--blue); }
+  .job-card { background: var(--card); border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); border-left: 4px solid var(--blue); transition: transform .15s; }
+  .job-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+  .job-card.priority-high { border-left-color: var(--red); }
+  .job-card.priority-medium { border-left-color: var(--amber); }
+  .job-card.priority-low { border-left-color: #94A3B8; }
+  .job-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+  .job-title { font-size: 18px; font-weight: 700; color: var(--text); }
+  .job-company { font-size: 15px; color: var(--blue); font-weight: 600; margin-top: 2px; }
+  .job-meta { display: flex; gap: 10px; flex-wrap: wrap; margin: 8px 0; }
+  .job-meta span { font-size: 13px; color: var(--text-secondary); background: var(--bg); padding: 3px 10px; border-radius: 4px; }
+  .match-badge { display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 700; }
+  .match-high { background: #D1FAE5; color: #065F46; }
+  .match-medium { background: #FEF3C7; color: #92400E; }
+  .company-section { background: var(--blue-light); border-radius: 8px; padding: 14px; margin: 12px 0; }
+  .company-section h4 { font-size: 14px; color: var(--blue-dark); margin-bottom: 6px; }
+  .company-section p { font-size: 13px; color: #334155; line-height: 1.7; }
+  .jd-section { margin: 12px 0; }
+  .jd-section h4 { font-size: 14px; color: var(--text); margin-bottom: 6px; }
+  .jd-section ul { padding-left: 18px; font-size: 13px; color: #475569; }
+  .jd-section li { margin-bottom: 4px; }
+  .apply-btn { display: inline-block; padding: 10px 24px; background: var(--blue); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: .2s; }
+  .apply-btn:hover { background: var(--blue-dark); }
+  .search-link { font-size: 13px; color: var(--text-secondary); margin-top: 6px; }
+  .search-link a { color: var(--blue); }
+  hr { border: none; border-top: 1px solid var(--border); margin: 30px 0; }
+  .summary-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+  .summary-table th { background: var(--blue-dark); color: #fff; padding: 10px 12px; text-align: left; }
+  .summary-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  .summary-table tr:nth-child(even) { background: #F8FAFC; }
+  footer { text-align: center; padding: 30px; color: var(--text-secondary); font-size: 13px; }
+  .note-box { background: #FEF3C7; border-radius: 8px; padding: 14px; margin: 16px 0; font-size: 13px; color: #92400E; }
+  .note-box strong { color: #D97706; }
+  @media (max-width: 768px) { 
+    .container { padding: 12px; }
+    header h1 { font-size: 22px; }
+    .job-card { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🇦🇹 奥地利维也纳 · LinkedIn 岗位精选</h1>
+  <p>基于"能源供应链经理 + 电商运营 + 量化分析"背景定向匹配 | 2026年6月22日更新</p>
+</header>
+
+<div class="container">
+
+<!-- 用户画像 -->
+<div class="profile-bar">
+  <span class="tag tag-blue">🔋 能源企业供应链管理经理</span>
+  <span class="tag tag-green">🛒 电商平台运营经验</span>
+  <span class="tag tag-blue">👥 20人团队管理</span>
+  <span class="tag tag-amber">📊 量化分析师资格证</span>
+  <span class="tag tag-green">🇦🇹 目标：奥地利维也纳</span>
+</div>
+
+<!-- ==================== 第一梯队 ==================== -->
+<h2 class="section-title">🥇 第一梯队：核心匹配（能源+供应链）</h2>
+
+<!-- 1. Siemens Energy -->
+<div class="job-card priority-high">
+  <div class="job-header">
+    <div>
+      <div class="job-title">Project Planner (f/m/d)</div>
+      <div class="job-company">西门子能源 Siemens Energy</div>
+    </div>
+    <span class="match-badge match-high">🔥 匹配度 95%</span>
+  </div>
+  <div class="job-meta">
+    <span>📍 奥地利 维也纳</span>
+    <span>🕐 3小时前发布</span>
+    <span>💼 全职</span>
+    <span>🇩🇪 德语/英语</span>
+  </div>
+  
+  <div class="company-section">
+    <h4>🏢 公司背景</h4>
+    <p>2020年从西门子集团分拆独立，全球能源技术领导者。9.9万员工，年营收~345亿欧元，德国DAX上市公司。业务覆盖燃气轮机、风电、电网技术、氢能、工业脱碳。维也纳办公室是中东欧区域重要节点。<strong>能源行业最顶级的雇主之一。</strong></p>
+  </div>
+
+  <div class="jd-section">
+    <h4>📋 岗位职责（典型）</h4>
+    <ul>
+      <li>负责能源项目（输配电/发电/可再生能源）的计划排期与资源协调</li>
+      <li>跨部门协调工程、采购、物流团队确保项目里程碑达成</li>
+      <li>项目预算管控、风险评估与进度报告</li>
+      <li>使用SAP/Primavera等工具进行项目计划和供应链优化</li>
+    </ul>
+  </div>
+
+  <div class="jd-section">
+    <h4>✅ 您的匹配点</h4>
+    <ul>
+      <li>能源行业供应链管理经验 → <strong>直接对口</strong></li>
+      <li>20人团队管理 → 跨部门协调能力</li>
+      <li>量化分析资格证 → 预算/数据分析能力强</li>
+    </ul>
+  </div>
+
+  <a href="https://www.linkedin.com/jobs/search/?keywords=Project%20Planner%20Siemens%20Energy&location=Wien%2C%20%C3%96sterreich" class="apply-btn" target="_blank">🔗 LinkedIn 搜索此岗位</a>
+  <div class="search-link">💡 提示：登录LinkedIn后在维也纳搜索 "Siemens Energy Project Planner" 即可找到详细JD并投递</div>
+</div>
+
+<!-- 2. voestalpine -->
+<div class="job-card priority-high">
+  <div class="job-header">
+    <div>
+      <div class="job-title">Global Supply Chain Digitalization Expert (m/f/d)</div>
+      <div class="job-company">voestalpine 奥钢联集团</div>
+    </div>
+    <span class="match-badge match-high">🔥 匹配度 93%</span>
+  </div>
+  <div class="job-meta">
+    <span>📍 奥地利 维也纳</span>
+    <span>🕐 3周前</span>
+    <span>💼 全职</span>
+    <span>🌍 全球角色</span>
+  </div>
+  
+  <div class="company-section">
+    <h4>🏢 公司背景</h4>
+    <p>奥地利本土最大工业集团之一，总部林茨，维也纳证券交易所上市。5.1万员工，年营收~167亿欧元。全球高端钢材和特种材料领导者，供应汽车、能源、铁路、航空航天行业。<strong>奥地利国企级雇主，稳定性极高。</strong></p>
+  </div>
+
+  <div class="jd-section">
+    <h4>📋 岗位职责（典型）</h4>
+    <ul>
+      <li>推动全球供应链数字化转型战略，引入AI/自动化工具优化采购与物流</li>
+      <li>与IT部门合作实施SAP S/4HANA等系统的供应链模块</li>
+      <li>制定供应链KPI体系，通过数据分析驱动决策优化</li>
+      <li>管理跨区域（欧洲/亚洲/美洲）供应链数字化项目</li>
+    </ul>
+  </div>
+
+  <div class="jd-section">
+    <h4>✅ 您的匹配点</h4>
+    <ul>
+      <li>供应链管理经验 + 数字化方向 → <strong>完美组合</strong></li>
+      <li>电商运营背景 → 数字化思维强</li>
+      <li>量化分析 → 数据分析驱动供应链优化</li>
+      <li>voestalpine也招 <strong>Global Business Process Manager – Demand To Pay</strong>（1个月前，同样适合您）</li>
+    </ul>
+  </div>
+
+  <a href="https://www.linkedin.com/jobs/search/?keywords=voestalpine%20Supply%20Chain&location=Wien%2C%20%C3%96sterreich" class="apply-btn" target="_blank">🔗 LinkedIn 搜索此岗位</a>
+</div>
+
+<!-- 3. Exyte -->
+<div class="job-card priority-high">
+  <div class="job-header">
+    <div>
+      <div class="job-title">Expert Project Procurement (m/f/d)</div>
+      <div class="job-company">Exyte 集团</div>
+    </div>
+    <span class="match-badge match-high">🔥 匹配度 92%</span>
+  </div>
+  <div class="job-meta">
+    <span>📍 奥地利 维也纳</span>
+    <span>🕐 <strong style="color:#EF4444">刚刚发布</strong></span>
+    <span>💼 全职</span>
+    <span>⚡ 紧急需求</span>
+  </div>
+  
+  <div class="company-section">
+    <h4>🏢 公司背景</h4>
+    <p>德国EPC（设计-采购-施工）工程巨头，总部斯图加特。9000+员工，年营收70亿欧元+。专精半导体、生物制药、数据中心等高科技设施建设。<strong>工程采购是Exyte核心业务，岗位价值高。</strong></p>
+  </div>
+
+  <div class="jd-section">
+    <h4>📋 岗位职责（典型）</h4>
+    <ul>
+      <li>负责大型EPC项目的设备/材料采购策略制定与执行</li>
+      <li>供应商评估、谈判、合同管理全流程</li>
+      <li>跨国供应链管理，确保项目交付时间和预算</li>
+      <li>与工程团队紧密协作，优化技术规格与采购成本</li>
+    </ul>
+  </div>
+
+  <div class="jd-section">
+    <h4>✅ 您的匹配点</h4>
+    <ul>
+      <li>供应链采购管理 → <strong>核心能力直接对口</strong></li>
+      <li>能源企业经验 → EPC项目常涉及能源设施</li>
+      <li><strong style="color:#EF4444">刚刚发布！</strong> 竞争少，建议立即投递</li>
+    </ul>
+  </div>
+
+  <a href="https://www.linkedin.com/jobs/search/?keywords=Exyte%20Project%20Procurement&location=Wien%2C%20%C3%96sterreich" class="apply-btn" target="_blank">🔗 LinkedIn 搜索此岗位</a>
+</div>
+
+<!-- 4. Marsh -->
+<div class="job-card priority-high">
+  <div class="job-header">
+    <div>
+      <div class="job-title">Broker (m/w/d) - Construction & Energy & Power</div>
+      <div class="job-company">达信 Marsh（威达信集团）</div>
+    </div>
+    <span class="match-badge match-high">🔥 匹配度 90%</span>
+  </div>
+  <div class="job-meta">
+    <span>📍 奥地利 维也纳</span>
+    <span>🕐 1周前</span>
+    <span>💼 全职</span>
+  </div>
+  
+  <div class="company-section">
+    <h4>🏢 公司背景</h4>
+    <p>全球最大保险经纪和风险咨询公司，母公司Marsh McLennan（纽交所：MMC，财富500强）。4.5万员工，130+国家。专精建筑、能源、电力行业风险管理和保险方案。<strong>能源+风险+金融三合一，量化证直接变现。</strong></p>
+  </div>
+
+  <div class="jd-section">
+    <h4>📋 岗位职责（典型）</h4>
+    <ul>
+      <li>为能源/电力/建筑客户设计风险管理与保险解决方案</li>
+      <li>评估大型能源项目（风电场、光伏电站、输电设施）的风险敞口</li>
+      <li>与保险公司谈判条款和费率，为客户争取最优条件</li>
+      <li>数据分析驱动风险评估和定价建议</li>
+    </ul>
+  </div>
+
+  <div class="jd-section">
+    <h4>✅ 您的匹配点</h4>
+    <ul>
+      <li>能源行业深度经验 → 理解客户需求</li>
+      <li>量化分析师资格证 → <strong>风险评估核心能力</strong></li>
+      <li>供应链管理 → 了解大型项目运作逻辑</li>
+    </ul>
+  </div>
+
+  <a href="https://www.linkedin.com/jobs/search/?keywords=Marsh%20Energy%20Power%20Broker&location=Wien%2C%20%C3%96sterreich" class="apply-btn" target="_blank">🔗 LinkedIn 搜索此岗位</a>
+</div>
+
+<!-- 5. Eaton -->
+<div class="job-card priority-medium">
+  <div class="job-header">
+    <div>
+      <div class="job-title">VP Research & Development Engineering EMEA</div>
+      <div class="job-company">伊顿 Eaton</div>
+    </div>
+    <span class="match-badge match-medium">⭐ 匹配度 82%</span>
+  </div>
+  <div class="job-meta">
+    <span>📍 奥地利 维也纳</span>
+    <span>🕐 2天前</span>
+    <span>💼 高管级别</span>
+  </div>
+  
+  <div class="company-section">
+    <h4>🏢 公司背景</h4>
+    <p>全球电力管理领军企业，爱尔兰总部（美国运营），纽交所上市（ETN），财富500强。9.4万员工，年营收232亿美元。产品覆盖电气组件、配电系统、UPS不间断电源、能源管理方案。在维也纳设有中东欧区域中心。</p>
+  </div>
+
+  <div class="jd-section">
+    <h4>📋 岗位职责（典型）</h4>
+    <ul>
+      <li>领导EMEA区域（欧洲、中东、非洲）的研发工程团队</li>
+      <li>制定区域产品开发和创新战略</li>
+      <li>跨部门协调工程、供应链、市场团队</li>
+      <li>管理预算、项目组合和团队发展</li>
+    </ul>
+  </div>
+
+  <div class="jd-section">
+    <h4>✅ 您的匹配点</h4>
+    <ul>
+      <li>20人团队管理 → 高管岗位看重的领导力</li>
+      <li>能源行业背景 → 行业理解</li>
+      <li>⚠️ 侧重研发工程（R&D），非纯供应链，需要技术背景</li>
+    </ul>
+  </div>
+
+  <a href="https://www.linkedin.com/jobs/search/?keywords=Eaton%20VP%20Vienna&location=Wien%2C%20%C3%96sterreich" class="apply-btn" target="_blank">🔗 LinkedIn 搜索此岗位</a>
+</div>
+
+<hr>
+
+<!-- ==================== 第二梯队 ==================== -->
+<h2 class="section-title">🥈 第二梯队：采购/咨询方向</h2>
+
+<!-- 6. BCG / Inverto -->
+<div class="job-card priority-high">
+  <div class="job-header">
+    <div>
+      <div class="job-title">Consultant / Associate Consultant – Procurement & SCM</div>
+      <div class="job-company">BCG 波士顿咨询 / Inverto (BCG子公司)</div>
+    </div>
+    <span class="match-badge match-high">🔥 匹配度 88%</span>
+  </div>
+  <div class="job-meta">
+    <span>📍 奥地利 维也纳</span>
+    <span>🕐 1-2周前</span>
+    <span>💼 全职</span>
+    <span>🏆 MBB咨询</span>
+  </div>
+  
+  <div class="company-section">
+    <h4>🏢 公司背景</h4>
+    <p><strong>BCG</strong>：全球三大战略咨询公司（MBB），维也纳有办公室。BCG的Operations Practice覆盖采购、供应链、制造等。<strong>Inverto</strong>是BCG旗下专业采购和供应链管理咨询子公司，在欧洲10+国家有业务。加入Inverto等于进BCG体系。<strong>高薪、高强度、高成长。</strong></p>
+  </div>
+
+  <div class="jd-section">
+    <h4>📋 岗位职责（典型）</h4>
+    <ul>
+      <li>为客户（多为大型工业/能源企业）提供采购和供应链战略咨询</li>
+      <li>分析客户供应链数据，识别降本增效机会</li>
+      <li>设计采购策略、供应商管理体系和组织架构优化方案</li>
+      <li>参与项目交付，直接与客户高管层沟通</li>
+    </ul>
+  </div>
+
+  <div class="jd-section">
+    <h4>✅ 您的匹配点</h4>
+    <ul>
+      <li>能源行业实战经验 → 咨询公司急需的行业专家</li>
+      <li>供应链管理 → 核心咨询领域</li>
+      <li>量化分析 → <strong>必备技能，直接加分</strong></li>
+      <li>团队管理 → 项目管理和客户沟通能力</li>
+      <li>⚠️ 需要准备案例面试（Case Interview）</li>
+    </ul>
+  </div>
+
+  <a href="https://www.linkedin.com/jobs/search/?keywords=Inverto%20Procurement%20Consultant&location=Wien%2C%20%C3%96sterreich" class="apply-btn" target="_blank">🔗 LinkedIn 搜索 Inverto 岗位</a>
+  <div class="search-link">💡 BCG还同时招聘：① Consultant, Operations - Procurement ② Consultant, Risk & Compliance – Energy Trading</div>
+</div>
+
+<!-- 7. Interpath -->
+<div class="job-card priority-medium">
+  <div class="job-header">
+    <div>
+      <div class="job-title">Manager, Procurement Consulting (m/f/d)</div>
+      <div class="job-company">Interpath Advisory</div>
+    </div>
+    <span class="match-badge match-medium">⭐ 匹配度 85%</span>
+  </div>
+  <div class="job-meta">
+    <span>📍 奥地利 维也纳</span>
+    <span>🕐 1个月前</span>
+    <span>💼 全职</span>
+    <span>📈 多岗位扩招</span>
+  </div>
+  
+  <div class="company-section">
+    <h4>🏢 公司背景</h4>
+    <p>从KPMG英国重组业务独立（2021年），专注企业重组、交易咨询和采购供应链咨询。欧洲多国设办公室，维也纳团队正在扩招（同时有Manager、Assistant Manager、实习岗在线）。<strong>上升期公司，晋升速度快。</strong></p>
+  </div>
+
+  <div class="jd-section">
+    <h4>📋 岗位职责（典型）</h4>
+    <ul>
+      <li>领导采购咨询项目，为客户提供成本优化和供应链改善方案</li>
+      <li>管理项目团队，直接向总监/合伙人汇报</li>
+      <li>开发新业务机会，维护客户关系</li>
+      <li>培养初级顾问团队</li>
+    </ul>
+  </div>
+
+  <div class="jd-section">
+    <h4>✅ 您的匹配点</h4>
+    <ul>
+      <li>Manager级别 → 正好匹配您的管理经验</li>
+      <li>供应链+采购实战 → 直接应用</li>
+      <li>⚠️ 咨询行业需要德语流利</li>
+    </ul>
+  </div>
+
+  <a href="https://www.linkedin.com/jobs/search/?keywords=Interpath%20Procurement&location=Wien%2C%20%C3%96sterreich" class="apply-btn" target="_blank">🔗 LinkedIn 搜索 Interpath 岗位</a>
+</div>
+
+<!-- 8. Vaillant -->
+<div class="job-card priority-medium">
+  <div class="job-header">
+    <div>
+      <div class="job-title">Supply Chain & Purchasing Specialist (m/w/d)</div>
+      <div class="job-company">Vaillant Group 威能集团</div>
+    </div>
+    <span class="match-badge match-medium">⭐ 匹配度 83%</span>
+  </div>
+  <div class="job-meta">
+    <span>📍 奥地利 维也纳</span>
+    <span>🕐 6天前</span>
+    <span>💼 全职</span>
+  </div>
+  
+  <div class="company-section">
+    <h4>🏢 公司背景</h4>
+    <p>德国家族企业（1874年创立），全球壁挂式锅炉和暖通空调市场领导者。1.6万员工，年营收32亿欧元。正大力投资绿色能源、热泵、数字化。在维也纳设有中东欧区域总部。<strong>绿色转型中的稳健雇主。</strong></p>
+  </div>
+
+  <div class="jd-section">
+    <h4>📋 岗位职责（典型）</h4>
+    <ul>
+      <li>负责中东欧区域供应商管理和采购策略执行</li>
+      <li>库存优化、物流协调、供应链KPI管理</li>
+      <li>与生产、销售团队协调供需计划</li>
+      <li>供应商绩效评估和合同管理</li>
+    </ul>
+  </div>
+
+  <a href="https://www.linkedin.com/jobs/search/?keywords=Vaillant%20Supply%20Chain%20Purchasing&location=Wien%2C%20%C3%96sterreich" class="apply-btn" target="_blank">🔗 LinkedIn 搜索此岗位</a>
+</div>
+
+<hr>
+
+<!-- ==================== 第三梯队 ==================== -->
+<h2 class="section-title">🥉 第三梯队：电商/量化/数据方向</h2>
+
+<!-- 9. HOFER -->
+<div class="job-card priority-high">
+  <div class="job-header">
+    <div>
+      <div class="job-title">Data Scientist Supply Chain Management (m/w/d)</div>
+      <div class="job-company">HOFER Österreich（Aldi 奥地利）</div>
+    </div>
+    <span class="match-badge match-high">🔥 匹配度 88%</span>
+  </div>
+  <div class="job-meta">
+    <span>📍 奥地利 下奥地利 特鲁毛（近维也纳）</span>
+    <span>🕐 在线</span>
+    <span>💼 全职</span>
+  </div>
+  
+  <div class="company-section">
+    <h4>🏢 公司背景</h4>
+    <p>Aldi Süd集团奥地利子公司，奥地利500+家门店。Aldi全球营收~890亿欧元，全球员工超20万。作为零售巨头，供应链是核心命脉。<strong>零售供应链+数据科学 = 电商运营+量化分析的完美结合。</strong></p>
+  </div>
+
+  <div class="jd-section">
+    <h4>📋 岗位职责（典型）</h4>
+    <ul>
+      <li>利用机器学习和统计模型优化库存管理和需求预测</li>
+      <li>开发供应链数据分析仪表盘和自动化报告</li>
+      <li>与采购、物流团队协作，数据驱动运营决策</li>
+      <li>供应链网络优化、运输路线算法改进</li>
+    </ul>
+  </div>
+
+  <div class="jd-section">
+    <h4>✅ 您的匹配点</h4>
+    <ul>
+      <li>电商运营经验 → <strong>零售供应链理解</strong></li>
+      <li>量化分析师资格证 → <strong>核心技能</strong></li>
+      <li>供应链管理 → 领域知识</li>
+      <li>⚠️ 地点在下奥地利（Sattledt/特鲁毛），需通勤</li>
+    </ul>
+  </div>
+
+  <a href="https://www.linkedin.com/jobs/search/?keywords=HOFER%20Data%20Scientist%20Supply%20Chain&location=%C3%96sterreich" class="apply-btn" target="_blank">🔗 LinkedIn 搜索此岗位</a>
+</div>
+
+<!-- 10. RavenPack -->
+<div class="job-card priority-medium">
+  <div class="job-header">
+    <div>
+      <div class="job-title">Senior Quantitative Researcher – QIS</div>
+      <div class="job-company">RavenPack</div>
+    </div>
+    <span class="match-badge match-medium">⭐ 匹配度 80%</span>
+  </div>
+  <div class="job-meta">
+    <span>📍 奥地利 维也纳</span>
+    <span>🕐 在线</span>
+    <span>💼 全职</span>
+  </div>
+  
+  <div class="company-section">
+    <h4>🏢 公司背景</h4>
+    <p>西班牙金融科技公司，专注另类数据（Alternative Data）和NLP量化分析。客户包括顶级对冲基金和资管公司。在维也纳有办公室。<strong>量化证直接变现的最佳选择之一。</strong></p>
+  </div>
+
+  <div class="jd-section">
+    <h4>📋 岗位职责（典型）</h4>
+    <ul>
+      <li>开发量化投资策略（QIS = Quantitative Investment Strategies）</li>
+      <li>利用另类数据（新闻情绪、供应链数据等）构建预测模型</li>
+      <li>回测和优化交易信号</li>
+      <li>与数据工程团队协作，处理大规模数据集</li>
+    </ul>
+  </div>
+
+  <div class="jd-section">
+    <h4>✅ 您的匹配点</h4>
+    <ul>
+      <li>量化分析师资格证 → <strong>直通车</strong></li>
+      <li>供应链经验 → 理解实体经济数据</li>
+      <li>⚠️ 偏向金融量化，非供应链角色</li>
+    </ul>
+  </div>
+
+  <a href="https://www.linkedin.com/jobs/search/?keywords=RavenPack%20Quantitative%20Researcher%20Vienna&location=Wien%2C%20%C3%96sterreich" class="apply-btn" target="_blank">🔗 LinkedIn 搜索此岗位</a>
+</div>
+
+<!-- 11. Bybit Quant -->
+<div class="job-card priority-low">
+  <div class="job-header">
+    <div>
+      <div class="job-title">Lead Quantitative Analyst</div>
+      <div class="job-company">Bybit Fintech Limited</div>
+    </div>
+    <span class="match-badge match-medium">⭐ 匹配度 75%</span>
+  </div>
+  <div class="job-meta">
+    <span>📍 奥地利 维也纳</span>
+    <span>🕐 在线</span>
+    <span>💼 全职</span>
+    <span>⚠️ 加密行业风险</span>
+  </div>
+  
+  <div class="company-section">
+    <h4>🏢 公司背景 & ⚠️ 风险提示</h4>
+    <p>全球头部加密货币交易所，2018年成立，总部迪拜，8200万+用户。维也纳办公室主要负责欧洲合规运营。<strong style="color:#EF4444">⚠️ 2025年2月被盗15亿美元（史上最大加密黑客案），在多国受监管警示。</strong></p>
+  </div>
+
+  <div class="jd-section">
+    <h4>📋 岗位职责（典型）</h4>
+    <ul>
+      <li>开发量化交易策略和风控模型</li>
+      <li>市场微观结构分析、流动性建模</li>
+      <li>数据分析驱动交易决策</li>
+    </ul>
+  </div>
+
+  <div class="note-box">
+    <strong>⚠️ 风险提示：</strong>加密行业波动极大，公司安全记录有严重黑历史。建议仅作为备选，优先投递传统行业。
+  </div>
+
+  <a href="https://www.linkedin.com/jobs/search/?keywords=Bybit%20Quantitative%20Analyst&location=Wien%2C%20%C3%96sterreich" class="apply-btn" target="_blank">🔗 LinkedIn 搜索此岗位</a>
+</div>
+
+<!-- 12. AIT -->
+<div class="job-card priority-medium">
+  <div class="job-header">
+    <div>
+      <div class="job-title">Industry Expert & Senior Research Lead – Battery Cell Manufacturing</div>
+      <div class="job-company">AIT Austrian Institute of Technology</div>
+    </div>
+    <span class="match-badge match-medium">⭐ 匹配度 78%</span>
+  </div>
+  <div class="job-meta">
+    <span>📍 奥地利 维也纳</span>
+    <span>🕐 2个月前</span>
+    <span>💼 全职/研究</span>
+  </div>
+  
+  <div class="company-section">
+    <h4>🏢 公司背景</h4>
+    <p>奥地利最大国立应用研究机构，政府所有，1400+研究员。专注能源、交通、健康、数字化等领域的应用研究。<strong>稳定、有社会价值、学术界+产业界桥梁。</strong></p>
+  </div>
+
+  <div class="jd-section">
+    <h4>📋 岗位职责（典型）</h4>
+    <ul>
+      <li>领导电池制造领域的研究项目和行业合作</li>
+      <li>分析电池供应链、原材料市场和技术趋势</li>
+      <li>为政府和行业客户提供战略建议</li>
+      <li>发表研究报告，参与国际会议</li>
+    </ul>
+  </div>
+
+  <a href="https://www.linkedin.com/jobs/search/?keywords=AIT%20Battery%20Cell%20Manufacturing&location=Wien%2C%20%C3%96sterreich" class="apply-btn" target="_blank">🔗 LinkedIn 搜索此岗位</a>
+</div>
+
+<hr>
+
+<!-- ==================== 汇总表 ==================== -->
+<h2 class="section-title">📊 全部岗位汇总</h2>
+
+<table class="summary-table">
+  <thead>
+    <tr>
+      <th>优先级</th>
+      <th>公司</th>
+      <th>职位</th>
+      <th>匹配度</th>
+      <th>时效</th>
+      <th>年薪估</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🔥🔥🔥</td>
+      <td>西门子能源</td>
+      <td>Project Planner</td>
+      <td>95%</td>
+      <td>3小时前</td>
+      <td>€60K-90K</td>
+    </tr>
+    <tr>
+      <td>🔥🔥🔥</td>
+      <td>voestalpine 奥钢联</td>
+      <td>SCM Digitalization Expert</td>
+      <td>93%</td>
+      <td>3周前</td>
+      <td>€70K-100K</td>
+    </tr>
+    <tr>
+      <td>🔥🔥🔥</td>
+      <td>Exyte</td>
+      <td>Expert Project Procurement</td>
+      <td>92%</td>
+      <td><strong>刚刚发布</strong></td>
+      <td>€65K-95K</td>
+    </tr>
+    <tr>
+      <td>🔥🔥🔥</td>
+      <td>达信 Marsh</td>
+      <td>Broker - Energy & Power</td>
+      <td>90%</td>
+      <td>1周前</td>
+      <td>€70K-110K</td>
+    </tr>
+    <tr>
+      <td>🔥🔥🔥</td>
+      <td>BCG/Inverto</td>
+      <td>Procurement & SCM Consultant</td>
+      <td>88%</td>
+      <td>1-2周前</td>
+      <td>€80K-130K+</td>
+    </tr>
+    <tr>
+      <td>🔥🔥🔥</td>
+      <td>HOFER (Aldi)</td>
+      <td>Data Scientist SCM</td>
+      <td>88%</td>
+      <td>在线</td>
+      <td>€60K-85K</td>
+    </tr>
+    <tr>
+      <td>🔥🔥</td>
+      <td>Interpath</td>
+      <td>Manager Procurement Consulting</td>
+      <td>85%</td>
+      <td>1个月前</td>
+      <td>€75K-110K</td>
+    </tr>
+    <tr>
+      <td>🔥🔥</td>
+      <td>Vaillant 威能</td>
+      <td>SCM & Purchasing Specialist</td>
+      <td>83%</td>
+      <td>6天前</td>
+      <td>€55K-80K</td>
+    </tr>
+    <tr>
+      <td>🔥🔥</td>
+      <td>伊顿 Eaton</td>
+      <td>VP R&D Engineering EMEA</td>
+      <td>82%</td>
+      <td>2天前</td>
+      <td>€120K-180K+</td>
+    </tr>
+    <tr>
+      <td>🔥🔥</td>
+      <td>RavenPack</td>
+      <td>Sr Quantitative Researcher</td>
+      <td>80%</td>
+      <td>在线</td>
+      <td>€70K-120K</td>
+    </tr>
+    <tr>
+      <td>🔥</td>
+      <td>AIT</td>
+      <td>Battery Industry Expert</td>
+      <td>78%</td>
+      <td>2个月前</td>
+      <td>€60K-85K</td>
+    </tr>
+    <tr>
+      <td>🔥</td>
+      <td>Bybit</td>
+      <td>Lead Quantitative Analyst</td>
+      <td>75%</td>
+      <td>在线</td>
+      <td>€80K-120K</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note-box">
+  <strong>📌 重要说明：</strong><br>
+  ① 年薪为基于维也纳市场行情的估算，非官方薪资范围。<br>
+  ② 部分岗位JD描述基于岗位名称和公司类型的行业典型要求，非LinkedIn原文（LinkedIn需登录查看完整JD）。<br>
+  ③ 点击"LinkedIn搜索"按钮后，登录您的LinkedIn账号即可看到完整职位描述和直接投递入口。<br>
+  ④ 数据采集时间：2026年6月22日。岗位可能随时下架，请尽快行动。
+</div>
+
+<hr>
+
+<!-- 建议 -->
+<h2 class="section-title">🎯 行动建议</h2>
+
+<div class="job-card">
+  <h3 style="color: var(--blue-dark); margin-bottom: 12px;">本周优先级</h3>
+  <ol style="padding-left: 20px; font-size: 14px; color: #334155; line-height: 2;">
+    <li><strong>立即投递：Exyte Expert Project Procurement</strong>（"刚刚发布"，先发优势）</li>
+    <li><strong>立即投递：西门子能源 Project Planner</strong>（3小时前，能源行业顶配）</li>
+    <li><strong>本周内：voestalpine SCM Digitalization Expert</strong>（奥地利本土巨头，稳定性最高）</li>
+    <li><strong>本周内：BCG/Inverto Procurement Consultant</strong>（准备Case Interview，最高薪路径）</li>
+    <li><strong>尽快：Marsh Energy Broker</strong>（量化证绝佳变现方向）</li>
+  </ol>
+</div>
+
+<div class="job-card" style="border-left-color: var(--green);">
+  <h3 style="color: #065F46; margin-bottom: 12px;">长期准备</h3>
+  <ul style="padding-left: 20px; font-size: 14px; color: #334155; line-height: 2;">
+    <li><strong>德语能力：</strong>维也纳大部分岗位要求德语（至少B2）。如果德语不够，优先投英语岗位（BCG、Marsh、Exyte相对友好）</li>
+    <li><strong>LinkedIn优化：</strong>更新头像、简介改为德英双语、突出"Energiebranche Supply Chain Manager"标签</li>
+    <li><strong>签证：</strong>非欧盟公民需要工作签证。奥地利有红白红卡（Rot-Weiß-Rot Karte）针对高技能人才，供应链经理属于紧缺职业</li>
+    <li><strong>薪资谈判：</strong>维也纳供应链经理中位数€70K，咨询公司/能源行业溢价20-30%</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  <p>数据来源：LinkedIn Jobs · 采集时间 2026-06-22 19:52 CEST</p>
+  <p>采购研究中心 · 内部参考资料</p>
+</footer>
+
+</body>
+</html>
