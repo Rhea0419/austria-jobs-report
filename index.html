@@ -3,928 +3,459 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>奥地利维也纳 · 岗位分析报告 — LinkedIn 精选</title>
+<title>🇦🇹 奥地利维也纳岗位分析报告 — 2026年7月27日</title>
 <style>
-  :root {
-    --blue: #3B82F6;
-    --blue-dark: #1E40AF;
-    --blue-light: #DBEAFE;
-    --green: #10B981;
-    --red: #EF4444;
-    --amber: #F59E0B;
-    --bg: #F0F4F8;
-    --card: #FFFFFF;
-    --text: #1E293B;
-    --text-secondary: #64748B;
-    --border: #E2E8F0;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-  header { background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%); color: #fff; padding: 40px 20px; text-align: center; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
-  header h1 { font-size: 28px; margin-bottom: 8px; }
-  header p { opacity: .9; font-size: 15px; }
-  .profile-bar { background: var(--card); border-radius: 12px; padding: 20px; margin-bottom: 30px; box-shadow: 0 1px 3px rgba(0,0,0,.08); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-  .tag { display: inline-block; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; }
-  .tag-blue { background: var(--blue-light); color: var(--blue-dark); }
-  .tag-green { background: #D1FAE5; color: #065F46; }
-  .tag-amber { background: #FEF3C7; color: #92400E; }
-  .section-title { font-size: 22px; font-weight: 700; margin: 30px 0 16px; padding-left: 12px; border-left: 4px solid var(--blue); }
-  .job-card { background: var(--card); border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); border-left: 4px solid var(--blue); transition: transform .15s; }
-  .job-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.1); }
-  .job-card.priority-high { border-left-color: var(--red); }
-  .job-card.priority-medium { border-left-color: var(--amber); }
-  .job-card.priority-low { border-left-color: #94A3B8; }
-  .job-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
-  .job-title { font-size: 18px; font-weight: 700; color: var(--text); }
-  .job-company { font-size: 15px; color: var(--blue); font-weight: 600; margin-top: 2px; }
-  .job-meta { display: flex; gap: 10px; flex-wrap: wrap; margin: 8px 0; }
-  .job-meta span { font-size: 13px; color: var(--text-secondary); background: var(--bg); padding: 3px 10px; border-radius: 4px; }
-  .match-badge { display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 700; }
-  .match-high { background: #D1FAE5; color: #065F46; }
-  .match-medium { background: #FEF3C7; color: #92400E; }
-  .match-low { background: #F1F5F9; color: #64748B; }
-  .company-section { background: var(--blue-light); border-radius: 8px; padding: 14px; margin: 12px 0; }
-  .company-section h4 { font-size: 14px; color: var(--blue-dark); margin-bottom: 6px; }
-  .company-section p { font-size: 13px; color: #334155; line-height: 1.7; }
-  .jd-section { margin: 12px 0; }
-  .jd-section h4 { font-size: 14px; color: var(--text); margin-bottom: 6px; }
-  .jd-section ul { padding-left: 18px; font-size: 13px; color: #475569; }
-  .jd-section li { margin-bottom: 4px; }
-  .apply-btn { display: inline-block; padding: 10px 24px; background: var(--blue); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: .2s; margin-right: 8px; }
-  .apply-btn:hover { background: var(--blue-dark); }
-  .search-link { font-size: 13px; color: var(--text-secondary); margin-top: 6px; }
-  .search-link a { color: var(--blue); }
-  hr { border: none; border-top: 1px solid var(--border); margin: 30px 0; }
-  .summary-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
-  .summary-table th { background: var(--blue-dark); color: #fff; padding: 10px 12px; text-align: left; }
-  .summary-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
-  .summary-table tr:nth-child(even) { background: #F8FAFC; }
-  .summary-table .pri-high { background: #FEF2F2; }
-  .summary-table .pri-med { background: #FFFBEB; }
-  footer { text-align: center; padding: 30px; color: var(--text-secondary); font-size: 13px; }
-  .note-box { background: #FEF3C7; border-radius: 8px; padding: 14px; margin: 16px 0; font-size: 13px; color: #92400E; }
-  .note-box strong { color: #D97706; }
-  .stats-row { display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0; }
-  .stat-card { background: var(--card); border-radius: 10px; padding: 16px 20px; flex: 1; min-width: 140px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
-  .stat-card .num { font-size: 32px; font-weight: 800; color: var(--blue); }
-  .stat-card .label { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
-  .section-intro { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
-  @media (max-width: 768px) { 
-    .container { padding: 12px; }
-    header h1 { font-size: 22px; }
-    .job-card { padding: 16px; }
-    .stats-row { flex-direction: column; }
-  }
+:root{--blue:#3B82F6;--blue-dark:#2563EB;--red:#EF4444;--yellow:#F59E0B;--gray:#6B7280;--bg:#F0F4F8;--white:#FFFFFF;--text:#1F2937;--muted:#6B7280}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:white;padding:40px 30px;border-radius:16px;margin-bottom:30px;text-align:center}
+.header h1{font-size:2.2em;margin-bottom:10px}
+.header .date{font-size:1.1em;opacity:0.9}
+.header .tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px}
+.header .tag{background:rgba(255,255,255,0.2);padding:4px 14px;border-radius:20px;font-size:0.88em}
+.section-title{font-size:1.5em;margin:30px 0 15px;padding-bottom:8px;border-bottom:3px solid var(--blue)}
+.job-card{background:var(--white);border-radius:12px;padding:24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-left:5px solid #ccc;transition:transform .2s}
+.job-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1)}
+.priority-high{border-left-color:var(--red)}
+.priority-medium{border-left-color:var(--yellow)}
+.priority-low{border-left-color:#9CA3AF}
+.job-title{font-size:1.15em;font-weight:700;color:var(--text);margin-bottom:4px}
+.job-company{font-size:1.02em;color:var(--blue);font-weight:600;margin-bottom:4px}
+.job-meta{display:flex;flex-wrap:wrap;gap:12px;font-size:0.9em;color:var(--muted);margin-bottom:10px}
+.job-meta span{display:flex;align-items:center;gap:4px}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.8em;font-weight:600}
+.badge-energy{background:#DCFCE7;color:#166534}
+.badge-sc{background:#DBEAFE;color:#1E40AF}
+.badge-mgmt{background:#FEF3C7;color:#92400E}
+.badge-quant{background:#EDE9FE;color:#6B21A8}
+.badge-digital{background:#FCE7F3;color:#9D174D}
+.job-desc{font-size:0.93em;color:var(--text);margin:10px 0;padding:10px 14px;background:#F8FAFC;border-radius:8px}
+.job-match{font-size:0.9em;color:var(--muted);margin-top:8px}
+.job-link{display:inline-block;margin-top:10px;color:var(--blue);text-decoration:none;font-weight:600;font-size:0.92em}
+.job-link:hover{text-decoration:underline}
+.salary{font-size:0.85em;color:var(--gray);margin-top:4px}
+.score{font-size:0.92em;font-weight:700;color:var(--blue);margin-top:4px}
+table{width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);margin:16px 0}
+th{background:var(--blue);color:white;padding:12px 14px;text-align:left;font-weight:600}
+td{padding:10px 14px;border-bottom:1px solid #E5E7EB}
+tr:last-child td{border-bottom:none}
+tr:hover{background:#F8FAFC}
+.score-bar{display:inline-block;height:8px;border-radius:4px;background:var(--blue);min-width:20px}
+.advice-box{background:var(--white);border-radius:12px;padding:24px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.advice-box h3{color:var(--blue);margin-bottom:12px}
+.advice-box ul{padding-left:20px}
+.advice-box li{margin-bottom:8px;font-size:0.95em}
+.footer{text-align:center;padding:30px;color:var(--muted);font-size:0.88em;border-top:1px solid #E5E7EB;margin-top:40px}
+.footer a{color:var(--blue)}
+.summary-box{background:var(--white);border-radius:12px;padding:20px;margin-bottom:24px;box-shadow:0 2px 8px rgba(0,0,0,0.06);display:flex;gap:20px;flex-wrap:wrap}
+.summary-item{flex:1;min-width:140px;text-align:center;padding:12px}
+.summary-item .num{font-size:2em;font-weight:800;color:var(--blue)}
+.summary-item .label{font-size:0.85em;color:var(--muted)}
+@media(max-width:768px){.container{padding:10px}.header{padding:25px 15px}.header h1{font-size:1.5em}.job-card{padding:16px}}
 </style>
 </head>
 <body>
-<header>
-  <h1>🇦🇹 奥地利维也纳 · LinkedIn 岗位精选</h1>
-  <p>2026年8月3日 周一 · 第31周 · 覆盖10个关键词维度</p>
-</header>
 <div class="container">
 
-<div class="profile-bar">
-  <span class="tag tag-blue">🔋 能源企业供应链管理经理</span>
-  <span class="tag tag-green">🛒 电商平台运营经验</span>
-  <span class="tag tag-blue">👥 20人团队管理</span>
-  <span class="tag tag-amber">📊 量化分析师资格证</span>
-  <span class="tag tag-green">🇦🇹 目标：奥地利维也纳</span>
+<div class="header">
+<h1>🇦🇹 奥地利维也纳 — 岗位匹配分析报告</h1>
+<div class="date">📅 2026年7月27日 星期一 · 第31周</div>
+<div class="tags">
+<span class="tag">⚡ 能源供应链管理</span>
+<span class="tag">🛒 电商运营</span>
+<span class="tag">👥 20人团队管理</span>
+<span class="tag">📊 量化分析师证</span>
+<span class="tag">📍 Wien, Österreich</span>
+</div>
 </div>
 
-<div class="stats-row">
-  <div class="stat-card"><div class="num">10</div><div class="label">搜索关键词组</div></div>
-  <div class="stat-card"><div class="num">5,000+</div><div class="label">浏览岗位总数</div></div>
-  <div class="stat-card"><div class="num">18</div><div class="label">精选匹配岗位</div></div>
-  <div class="stat-card"><div class="num">85%</div><div class="label">最高匹配度</div></div>
-  <div class="stat-card"><div class="num">8</div><div class="label">新调研公司</div></div>
+<!-- Summary Box -->
+<div class="summary-box">
+<div class="summary-item"><div class="num">16</div><div class="label">精选匹配岗位</div></div>
+<div class="summary-item"><div class="num">73%</div><div class="label">最高匹配度</div></div>
+<div class="summary-item"><div class="num">6</div><div class="label">高优先级岗位</div></div>
+<div class="summary-item"><div class="num">10</div><div class="label">本周新发布</div></div>
+<div class="summary-item"><div class="num">5</div><div class="label">新发现公司</div></div>
 </div>
 
-<!-- ═══════════ 第一梯队：能源+供应链核心匹配 ═══════════ -->
 <h2 class="section-title">🔥 第一梯队：能源+供应链核心匹配（Top 6）</h2>
-<p class="section-intro">能源/可再生能源行业 × 供应链/采购管理岗位，与用户背景最契合。</p>
 
-<!-- Job 1 -->
+<!-- Job 1: Borealis -->
 <div class="job-card priority-high">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Divison and Project Procurement Manager (m/f/d)</div>
-      <div class="job-company">ANDRITZ 安德里茨</div>
-    </div>
-    <span class="match-badge match-high">匹配度 85%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 3天前发布</span>
-    <span>💰 预估 €75K–100K</span>
-    <span>🏷️ 能源+工业</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>ANDRITZ（安德里茨）是奥地利本土全球工业技术巨头，总部位于格拉茨，维也纳证券交易所上市。全球约27,000名员工，年营收~€86亿。核心业务涵盖水电站设备（全球领先）、制浆造纸、金属加工和分离技术。维也纳设有重要项目管理办公室，负责中东欧及全球EPC项目交付。2024年订单积压创历史新高，采购团队持续扩招。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>负责大型工业项目（水电站/纸浆厂/冶金厂）的采购策略制定与执行</li>
-      <li>管理分包商和供应商关系，确保EPC项目按时按预算交付</li>
-      <li>跨部门协调工程、物流、质量团队，优化供应链总成本</li>
-      <li>参与全球供应商评估、谈判与合同管理</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>能源行业(水电) + 供应链采购管理 + 团队协作 + 大型项目管理 = 完美匹配用户能源供应链经理背景。ANDRITZ作为奥地利本土巨头，签证/工签支持力度大。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Divison%20Project%20Procurement%20Manager%20Andritz&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
-  <div class="search-link">原始链接：<a href="https://at.linkedin.com/jobs/view/divison-and-project-procurement-manager-m-f-d-at-andritz-4447018025" target="_blank">LinkedIn直达</a>（需登录）</div>
+<div class="job-title">Group Expert – Digitalization – Produce to Supply (m/f/d)</div>
+<div class="job-company">Borealis · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 近期发布</span>
+<span class="badge badge-energy">能源/化工</span><span class="badge badge-sc">供应链</span><span class="badge badge-digital">数字化</span>
+</div>
+<div class="salary">💰 年薪估算：€70K–95K</div>
+<div class="score">🎯 匹配度：73%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>Borealis 总部位于维也纳，是全球领先的聚烯烃、基础化学品和循环经济解决方案提供商，由OMV（75%）和ADNOC（25%）持股。全球约6,000名员工，年收入约€8B。维也纳办公室专注于Produce-to-Supply链路的数字化转型。
+<br><br>
+<strong>典型职责：</strong>集团级数字化专家，主导从生产到供应的全链路数字化项目，包括供应链流程优化、系统集成、数据分析平台搭建。需要深度理解化工/能源行业的供应链运作，推动数字化变革与最佳实践落地。
+</div>
+<div class="job-match">✅ 匹配点：能源行业供应链+数字化运营+集团级影响力→最高度匹配</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=Borealis%20digitalization%20supply%20chain&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 2 -->
+<!-- Job 2: McKinsey -->
 <div class="job-card priority-high">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Technische:r Einkäufer:in (m/w/d) — 技术采购</div>
-      <div class="job-company">PÜSPÖK Erneuerbare Energie</div>
-    </div>
-    <span class="match-badge match-high">匹配度 75%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 3个月前发布</span>
-    <span>💰 预估 €55K–75K</span>
-    <span>🏷️ 可再生能源</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>PÜSPÖK Erneuerbare Energie 是一家奥地利本土可再生能源企业，总部位于维也纳。主营风能、太阳能项目开发与运营，是奥地利能源转型（Energiewende）的积极参与者。公司规模中等，但业务增长迅速，正在扩展AI与数字化团队。适合希望在纯可再生能源领域深耕的候选人。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>负责风电/光伏项目设备与组件的技术采购（风机、逆变器、电缆等）</li>
-      <li>评估供应商技术方案，确保符合可再生能源项目标准</li>
-      <li>参与项目预算编制和采购成本控制</li>
-      <li>与技术团队协作，管理设备交付时间表</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>可再生能源行业 × 采购岗位，与用户能源供应链背景高度契合。公司虽小但位于维也纳，且业务方向（可再生能源）是欧洲长期增长赛道。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=P%C3%9CSP%C3%96K%20Eink%C3%A4ufer&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Experienced Consultant – Procurement</div>
+<div class="job-company">McKinsey & Company · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 2周前</span>
+<span class="badge badge-sc">采购</span><span class="badge badge-mgmt">管理咨询</span><span class="badge badge-quant">分析</span>
+</div>
+<div class="salary">💰 年薪估算：€90K–140K+</div>
+<div class="score">🎯 匹配度：55%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>麦肯锡是全球顶级战略咨询公司，全球约45,000名员工，年收入约$16B。维也纳办公室是其在德语区的重要据点，Procurement & SCM实践是其核心业务线之一，服务能源、工业、消费品等行业的头部客户。
+<br><br>
+<strong>典型职责：</strong>作为经验丰富的采购顾问，领导客户项目团队，制定采购战略、优化供应商组合、实施成本节约计划。需要结构化思维、数据分析能力和高管沟通技巧。能源行业客户占比高。
+</div>
+<div class="job-match">✅ 匹配点：采购管理+团队领导+量化分析+能源客户→高度匹配；MBB咨询路径是实现职业跳跃的黄金跳板</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=McKinsey%20procurement%20consultant&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 3 -->
+<!-- Job 3: Vaillant -->
 <div class="job-card priority-high">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Project Lead Buyer (all genders)</div>
-      <div class="job-company">Beyond Gravity</div>
-    </div>
-    <span class="match-badge match-high">匹配度 70%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 4天前发布</span>
-    <span>💰 预估 €65K–90K</span>
-    <span>🏷️ 航天/高科技</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>Beyond Gravity 是瑞士科技集团RUAG的航天业务板块，全球约1,265名员工，2019年营收~3.39亿瑞士法郎。是阿丽亚娜空间（Arianespace）的重要供应商，持股0.82%。在瑞士、瑞典、芬兰、美国、奥地利（维也纳）和葡萄牙设有13个基地。供应链管理在航天工业中极为关键，涉及高度专业化的全球供应商网络。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>主导航天项目组件采购，管理高复杂度国际供应商关系</li>
-      <li>确保采购符合航天级质量标准（ECSS/AS9100）</li>
-      <li>协调项目时间线，处理长交付周期关键组件</li>
-      <li>参与RFQ/RFP流程，进行供应商技术+商业评估</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>项目采购管理 + 高技术供应链 + 维也纳办公室。航天供应链与能源大型项目采购有高度可转移技能。4天前新发，投递窗口好。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Project%20Lead%20Buyer%20Beyond%20Gravity&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Supply Chain & Purchasing Specialist (m/w/d) – Einkauf & Logistik | Operations</div>
+<div class="job-company">Vaillant Group · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 1个月前</span>
+<span class="badge badge-energy">暖通/能源</span><span class="badge badge-sc">供应链采购</span>
+</div>
+<div class="salary">💰 年薪估算：€55K–75K</div>
+<div class="score">🎯 匹配度：50%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>Vaillant Group 是欧洲领先的供暖、通风和空调技术制造商，总部位于德国Remscheid，奥地利设有重要办公室。全球约17,000名员工，年收入约€4B，家族企业。核心业务涵盖热泵、燃气锅炉、可再生能源供热系统。
+<br><br>
+<strong>典型职责：</strong>负责奥地利市场的供应链与采购运营，包括供应商管理、物料计划、物流协调、采购流程优化。作为Operations团队的核心成员，与生产、销售、财务部门密切协作。
+</div>
+<div class="job-match">✅ 匹配点：能源相关行业（暖通/热泵）+供应链采购+奥地利本地运营→高度契合</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=Vaillant%20supply%20chain%20purchasing&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 4 -->
+<!-- Job 4: Marsh -->
 <div class="job-card priority-high">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Business Development Director – Energy</div>
-      <div class="job-company">Critical Software</div>
-    </div>
-    <span class="match-badge match-high">匹配度 70%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 2周前发布</span>
-    <span>💰 预估 €100K–140K</span>
-    <span>🏷️ 能源+软件</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>Critical Software 是一家葡萄牙软件和工程服务公司，专注于关键任务系统，客户涵盖能源、航空航天、国防等领域。公司在能源行业提供数字化解决方案和工程服务。维也纳办公室负责中东欧能源市场的业务拓展。适合能源行业背景+商务拓展转型的候选人。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>开拓中东欧能源行业客户，推动软件+工程服务销售</li>
-      <li>管理能源领域大客户关系，制定市场进入策略</li>
-      <li>与工程团队协作，定制能源数字化解决方案</li>
-      <li>参与能源行业展会和合作伙伴生态建设</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>能源行业深耕 × Director级别 = 匹配用户能源企业经理+管理经验。从供应链转向BD是自然职业扩展路径，薪资天花板高。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Business%20Development%20Director%20Energy%20Critical%20Software&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Broker (m/w/d) – Construction and Energy & Power</div>
+<div class="job-company">Marsh (Marsh McLennan) · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 近期发布</span>
+<span class="badge badge-energy">能源/电力</span><span class="badge badge-mgmt">风险管理</span>
+</div>
+<div class="salary">💰 年薪估算：€70K–100K</div>
+<div class="score">🎯 匹配度：50%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>Marsh 是全球最大保险经纪和风险管理公司，隶属于Marsh McLennan集团（NYSE: MMC），全球约85,000名员工，收入约$23B。维也纳办公室的Energy & Power实践专注为能源基础设施、电厂、可再生能源项目提供风险解决方案。
+<br><br>
+<strong>典型职责：</strong>为建筑和能源电力行业客户设计保险和风险管理方案，分析项目风险敞口，与保险公司谈判最优条款。需要深入理解能源项目全生命周期的风险特征。
+</div>
+<div class="job-match">✅ 匹配点：能源电力行业+项目级风险管理+商业谈判→非常规但高度对口的能源供应链延伸领域</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=Marsh%20energy%20power%20broker&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 5 -->
+<!-- Job 5: waterdrop -->
 <div class="job-card priority-high">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Power Market Modeller — 电力市场建模</div>
-      <div class="job-company">AFRY</div>
-    </div>
-    <span class="match-badge match-high">匹配度 70%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 1周前发布</span>
-    <span>💰 预估 €65K–85K</span>
-    <span>🏷️ 能源+量化</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>AFRY AB 是一家瑞典-芬兰工程设计与咨询公司，纳斯达克斯德哥尔摩上市。起源于1895年的"南瑞典蒸汽发生器协会"，如今拥有约19,000名员工，全球布局。能源部门是核心业务之一，提供电力市场分析、能源转型咨询、可再生能源规划等服务。维也纳办公室是中东欧能源咨询的重要枢纽。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>构建和维护欧洲电力市场模型（BID3/Plexos等），预测电价和市场走势</li>
-      <li>分析可再生能源并网对电力市场的影响</li>
-      <li>为客户提供能源交易策略和投资决策支持</li>
-      <li>运用Python/R进行数据分析和可视化</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>能源行业 + 量化分析 = 完美结合用户两大核心技能。AFRY同时有 Energy Transition Modeller 岗位（能源转型建模），建议一同投递。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Power%20Market%20Modeller%20AFRY&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Supply Planner (m/f/d)</div>
+<div class="job-company">waterdrop® · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 1天前</span>
+<span class="badge badge-sc">供应链</span><span class="badge badge-digital">D2C电商</span>
+</div>
+<div class="salary">💰 年薪估算：€50K–70K</div>
+<div class="score">🎯 匹配度：45%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>waterdrop® 是总部位于维也纳的快速成长D2C消费品牌，主打微饮料（Microdrink）补水产品。约500+员工，业务遍布欧洲、北美和亚洲，是奥地利最成功的初创企业之一。以电商直销为主，兼具B2B和零售渠道。
+<br><br>
+<strong>典型职责：</strong>负责全球供应链的需求预测、库存计划、补货策略。需要结合电商销售数据、季节性趋势、新品上市节奏进行供应规划，优化库存周转率和履约效率。
+</div>
+<div class="job-match">✅ 匹配点：电商供应链运营+数据分析+奥地利本土公司→电商与供应链的完美交叉</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=waterdrop%20supply%20planner&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 6 -->
+<!-- Job 6: BCG Energy -->
 <div class="job-card priority-high">
-  <div class="job-header">
-    <div>
-      <div class="job-title">AI Lead (m/w/d) — 人工智能负责人</div>
-      <div class="job-company">PÜSPÖK Erneuerbare Energie</div>
-    </div>
-    <span class="match-badge match-high">匹配度 65%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 2周前发布</span>
-    <span>💰 预估 €75K–100K</span>
-    <span>🏷️ 可再生能源+AI</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景（同上PÜSPÖK）</h4>
-    <p>PÜSPÖK Erneuerbare Energie 正在积极数字化转型，招聘AI Lead带领数据/AI团队，推动可再生能源资产管理的智能化（如预测性维护、发电量预测、能源交易优化）。这个岗位虽然偏向技术管理，但量化分析师背景+能源行业经验使其高度匹配。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>领导可再生能源AI/ML战略，搭建数据科学团队</li>
-      <li>开发风能/太阳能发电量预测模型</li>
-      <li>利用机器学习优化能源交易和资产管理</li>
-      <li>与能源市场团队协作，推动数据驱动决策</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>可再生能源 × 量化分析 × 管理经验 = 三维匹配。AI+能源是欧洲最热赛道之一，团队领导岗位适合20人管理经验。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=P%C3%9CSP%C3%96K%20AI%20Lead&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Consultant, Risk & Compliance – Market & Commodity Trading and Risk (Energy Trading)</div>
+<div class="job-company">Boston Consulting Group (BCG) · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 近期发布</span>
+<span class="badge badge-energy">能源交易</span><span class="badge badge-quant">量化分析</span>
+</div>
+<div class="salary">💰 年薪估算：€85K–130K+</div>
+<div class="score">🎯 匹配度：40%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>BCG是全球顶级战略咨询公司（MBB之一），全球约30,000名员工，年收入约$12B。维也纳办公室在能源交易风险与合规领域有深厚积累，服务欧洲主要能源交易商和公用事业公司。
+<br><br>
+<strong>典型职责：</strong>为能源交易客户提供风险管理和合规咨询服务，涉及大宗商品交易风险建模、监管合规框架设计、交易流程优化。需要量化分析能力和能源市场知识。
+</div>
+<div class="job-match">✅ 匹配点：能源行业+量化分析+咨询→量化分析师资质与能源背景的独特交叉点</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=BCG%20energy%20trading%20risk%20compliance&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- ═══════════ 第二梯队：采购/咨询方向 ═══════════ -->
-<h2 class="section-title">📋 第二梯队：采购管理与咨询方向（Top 6）</h2>
-<p class="section-intro">纯采购管理、供应链咨询岗位，与用户采购/管理经验匹配。</p>
+<h2 class="section-title">📋 第二梯队：采购/咨询/项目管理方向（5个）</h2>
 
-<!-- Job 7 -->
+<!-- Job 7: Octapharma -->
 <div class="job-card priority-medium">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Global Category Manager Directs (m/f/x)</div>
-      <div class="job-company">Gebauer & Griller</div>
-    </div>
-    <span class="match-badge match-medium">匹配度 70%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 2周前发布</span>
-    <span>💰 预估 €70K–95K</span>
-    <span>🏷️ 汽车/工业</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>Gebauer & Griller（GG集团）是奥地利本土电缆和线束系统制造商，总部位于维也纳，全球约4,000名员工。为汽车（含电动车）、工业和铁路行业提供高性能电缆解决方案。作为汽车供应链Tier 1/Tier 2供应商，全球化采购管理至关重要——尤其铜、铝等原材料和连接器组件的策略采购。是奥地利"隐形冠军"企业。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>制定全球直接物料（铜材、塑料、连接器）品类采购策略</li>
-      <li>管理国际供应商组合，优化总拥有成本（TCO）</li>
-      <li>跨地区（欧/亚/美）协调采购活动，确保供应链韧性</li>
-      <li>参与新产品开发（NPI）早期供应商介入</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>Global Category Manager = 采购管理核心岗位。奥地利本土中型企业，管理文化直接，20人团队管理经验是明显加分项。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Global%20Category%20Manager%20Gebauer%20Griller&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Group Senior Expert Supply Chain Excellence (m/f/d) – Procurement</div>
+<div class="job-company">Octapharma Austria · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 近期发布</span>
+<span class="badge badge-sc">供应链</span><span class="badge badge-mgmt">高级专家</span>
+</div>
+<div class="salary">💰 年薪估算：€80K–110K</div>
+<div class="score">🎯 匹配度：40%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>Octapharma是全球领先的人血浆蛋白制品公司，总部位于瑞士拉亨。维也纳拥有其全球最大的血浆分离工厂，约10,000名全球员工。
+<br><br>
+<strong>典型职责：</strong>集团级供应链卓越运营专家，负责采购流程优化、供应商管理、供应链KPI体系建设，推动全球采购与供应链的战略协同。
+</div>
+<div class="job-match">✅ 匹配点：供应链采购+集团级影响力+流程优化→制药行业但SCM核心能力完全匹配</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=Octapharma%20supply%20chain%20excellence&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 8 -->
+<!-- Job 8: Interpath -->
 <div class="job-card priority-medium">
-  <div class="job-header">
-    <div>
-      <div class="job-title">(Associate) Consultant in Procurement / Supply Chain Management (f/m/d)</div>
-      <div class="job-company">Inverto | A BCG Company</div>
-    </div>
-    <span class="match-badge match-medium">匹配度 65%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 2周前发布</span>
-    <span>💰 预估 €65K–100K</span>
-    <span>🏷️ 采购咨询/BCG</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>Inverto于2000年在科隆成立，2017年被BCG收购成为其采购与供应链咨询子公司。400+员工，10+欧洲办公室（含维也纳）。专注领域：战略采购、供应链优化、运营转型。薪资比BCG总部低10-15%，但进入门槛也更友好。BCG品牌背书对职业发展极有价值。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>为客户（制造业/能源/消费品）提供采购与供应链优化咨询</li>
-      <li>进行支出分析、供应商评估、成本削减项目</li>
-      <li>协助实施数字化采购工具和流程再造</li>
-      <li>参与客户workshop，交付战略建议和实施方案</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>BCG子品牌 + 采购/供应链咨询 = 高价值职业平台。用户能源供应链管理经验可直接转化为咨询项目经验。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Inverto%20Consultant%20Procurement%20Supply%20Chain&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Manager, Procurement Consulting (m/f/d)</div>
+<div class="job-company">Interpath · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 2个月前</span>
+<span class="badge badge-sc">采购咨询</span><span class="badge badge-mgmt">管理</span>
+</div>
+<div class="salary">💰 年薪估算：€70K–95K</div>
+<div class="score">🎯 匹配度：40%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>Interpath 是从KPMG UK重组业务中剥离出来的独立咨询公司，总部伦敦，维也纳设有办公室。全球约1,000名顾问，专注采购与供应链管理咨询。
+<br><br>
+<strong>典型职责：</strong>Manager级别带领项目团队，为客户提供采购战略、供应商谈判、成本优化等咨询服务。需要项目管理和客户关系管理能力。
+</div>
+<div class="job-match">✅ 匹配点：采购管理+团队领导+咨询服务→中端咨询，门槛低于MBB但专业对口度高</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=Interpath%20procurement%20consulting&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 9 -->
+<!-- Job 9: Beyond Gravity -->
 <div class="job-card priority-medium">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Manager, Supply Chain Consulting (m/f/d)</div>
-      <div class="job-company">Interpath</div>
-    </div>
-    <span class="match-badge match-medium">匹配度 70%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 5个月前发布</span>
-    <span>💰 预估 €75K–110K</span>
-    <span>🏷️ 供应链咨询</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>Interpath Advisory 2021年从KPMG英国重组部门独立，专注企业重组、交易咨询和采购供应链咨询。维也纳团队正在积极扩招（Manager/Assistant Manager多层级），反映出中东欧市场需求增长。公司文化兼具四大专业性和创业灵活性。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>领导供应链咨询项目，涵盖采购优化、运营重组、数字化转型</li>
-      <li>管理客户关系，交付高层战略建议和可落地执行方案</li>
-      <li>指导和培养初级顾问团队</li>
-      <li>参与业务开发，拓展中东欧供应链咨询市场</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>Manager级别 + 供应链咨询 = 正好匹配用户管理经验。Interpath同时有Assistant Manager（采购咨询）岗位，可多层级投递。但发布5个月可能已招到人。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Interpath%20Supply%20Chain%20Consulting%20Wien&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Project Lead Buyer (all genders)</div>
+<div class="job-company">Beyond Gravity · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 2周前</span>
+<span class="badge badge-sc">项目采购</span><span class="badge badge-mgmt">管理</span>
+</div>
+<div class="salary">💰 年薪估算：€65K–85K</div>
+<div class="score">🎯 匹配度：40%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>Beyond Gravity（原RUAG Space）总部苏黎世，约1,600名员工，专注航空航天组件——卫星结构、运载火箭适配器。维也纳办公室负责电子和工业化运营。
+<br><br>
+<strong>典型职责：</strong>主导航天/国防项目的采购全流程，包括供应商筛选、合同谈判、交付管理。需要处理高复杂度、长周期的项目采购。
+</div>
+<div class="job-match">✅ 匹配点：项目采购管理+高复杂度供应链+领导力→航空航天行业独特，但采购核心能力完全适用</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=Beyond%20Gravity%20project%20lead%20buyer&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 10 -->
+<!-- Job 10: Mercury -->
 <div class="job-card priority-medium">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Teamlead Operativer Einkauf / Purchasing Manager (m/w/d)</div>
-      <div class="job-company">Iventa. The Human Management Group</div>
-    </div>
-    <span class="match-badge match-medium">匹配度 70%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 1周前发布</span>
-    <span>💰 预估 €65K–85K</span>
-    <span>🏷️ 采购管理</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>Iventa是奥地利领先的人力资源管理咨询集团，总部维也纳。虽然母公司是HR咨询，但此岗位很可能是为其大型工业客户招聘驻场采购经理（Managed Service模式），或Iventa内部采购部门。需仔细阅读JD确认实际工作场景。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>领导运营采购团队，管理日常采购活动和紧急需求</li>
-      <li>优化采购流程和供应商绩效管理</li>
-      <li>制定和实施采购策略，达成成本节约目标</li>
-      <li>团队管理和发展（Teamlead级别）</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>Teamlead + 采购管理 = 直接匹配用户20人团队管理经验+采购背景。1周前新发，竞争可能较少。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Teamlead%20Operativer%20Einkauf%20Purchasing%20Manager&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Logistics Manager</div>
+<div class="job-company">Mercury · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 1周前</span>
+<span class="badge badge-sc">物流管理</span><span class="badge badge-mgmt">管理</span>
+</div>
+<div class="salary">💰 年薪估算：€65K–85K</div>
+<div class="score">🎯 匹配度：40%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>Mercury 总部爱尔兰都柏林，专注于数据中心、制药、工业项目的工程与建设，在维也纳设有项目办公室。
+<br><br>
+<strong>典型职责：</strong>管理大型工程项目的物流运作，包括设备运输、现场仓储、供应链协调。OFCI（Owner Furnished Contractor Installed）物料管理是核心职责。
+</div>
+<div class="job-match">✅ 匹配点：物流管理+项目管理+团队领导→工程物流，对供应链管理经验要求高</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=Mercury%20logistics%20manager&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 11 -->
+<!-- Job 11: BYD -->
 <div class="job-card priority-medium">
-  <div class="job-header">
-    <div>
-      <div class="job-title">IT Procurement Manager:in (w/m/d)</div>
-      <div class="job-company">AGES – Österreichische Agentur für Gesundheit und Ernährungssicherheit</div>
-    </div>
-    <span class="match-badge match-medium">匹配度 55%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 1周前发布</span>
-    <span>💰 预估 €60K–80K</span>
-    <span>🏷️ 公共部门/IT采购</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>AGES是奥地利联邦政府下属的健康与食品安全局，总部维也纳。负责公共卫生、食品安全、药品监管等关键职能。作为政府机构，提供稳定的工作环境、良好的工作生活平衡和奥地利公务员级别的福利。IT采购在公共部门是非常重要的职能，涉及严格的合规和招投标流程。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>管理IT软硬件、服务采购全流程（需求分析→招标→合同管理）</li>
-      <li>确保采购符合奥地利联邦采购法（BVergG）合规要求</li>
-      <li>与IT部门协作，制定年度采购计划和预算</li>
-      <li>供应商管理和合同谈判</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>采购管理 + 维也纳公共部门 = 稳定的职业选择。政府岗位通常有德语要求（B2+），且工作节奏比企业慢——是一种不同的职业路径选择。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=IT%20Procurement%20Manager%20AGES%20Wien&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Flash Charging Acquisition Manager – Austria</div>
+<div class="job-company">BYD EUROPE · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 5个月前</span>
+<span class="badge badge-energy">新能源/EV</span><span class="badge badge-mgmt">管理</span>
+</div>
+<div class="salary">💰 年薪估算：€70K–95K</div>
+<div class="score">🎯 匹配度：40%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>比亚迪是全球最大的新能源汽车制造商之一，总部深圳，全球约900,000名员工，收入约$85B。欧洲业务快速扩张，奥地利是其在欧洲充电基础设施布局的重要市场。
+<br><br>
+<strong>典型职责：</strong>负责奥地利市场的快充站选址与收购，包括场地评估、商业谈判、合作伙伴管理、政府关系。需要战略思维和项目管理能力。
+</div>
+<div class="job-match">✅ 匹配点：新能源行业+项目管理+商务拓展→能源转型前沿领域，与供应链采购能力可迁移</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=BYD%20flash%20charging%20Austria&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 12 -->
-<div class="job-card priority-medium">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Purchasing Assistant (SGIM)(G5)</div>
-      <div class="job-company">International Atomic Energy Agency (IAEA)</div>
-    </div>
-    <span class="match-badge match-medium">匹配度 60%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳 Innere Stadt</span>
-    <span>🕐 1周前发布</span>
-    <span>💰 预估 €55K–70K (UN薪资免税)</span>
-    <span>🏷️ 联合国/核能</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>国际原子能机构（IAEA）是联合国下属的政府间组织，总部位于维也纳第一区。约2,500名员工，致力于促进核能的和平利用及核安全。作为联合国机构，提供极具竞争力的薪资（且免税）、优厚福利和国际工作环境。G5是专业支持级别（非管理层），但对于能源背景的候选人来说，UN的工作经历含金量极高，可作为进入联合国系统的跳板。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>协助核保障部门（SGIM）的采购流程，处理采购订单和合同</li>
-      <li>维护供应商数据库，确保符合UN采购规定</li>
-      <li>与全球供应商协调交付和物流</li>
-      <li>支持采购招标文件和报价评估</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>能源行业(核能) + 采购 + 维也纳总部 = 三方匹配，且UN薪资免税。G5级别偏低但可作为切入点——UN内部晋升体系完善。UN岗位对英语要求高（德语非必需）。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=IAEA%20Purchasing%20Assistant%20Vienna&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
-</div>
+<h2 class="section-title">📊 第三梯队：量化/数据/电商/科技方向（5个）</h2>
 
-<!-- ═══════════ 第三梯队：电商/量化/数据方向 ═══════════ -->
-<h2 class="section-title">💻 第三梯队：电商运营 / 量化分析 / 数据科学（Top 6）</h2>
-<p class="section-intro">电商运营、量化分析、数据科学方向，与用户电商运营和量化分析师背景匹配。</p>
-
-<!-- Job 13 -->
+<!-- Job 12: Massar -->
 <div class="job-card priority-low">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Senior Vice President Operations</div>
-      <div class="job-company">Rohlik Group</div>
-    </div>
-    <span class="match-badge match-medium">匹配度 55%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 近期发布</span>
-    <span>💰 预估 €130K–180K+</span>
-    <span>🏷️ 电商/食品供应链</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>Rohlik Group 是捷克最大的在线食品杂货配送公司（在奥地利以Gurkerl.at品牌运营），成立于2014年。已扩展至捷克、匈牙利、奥地利和德国，是欧洲食品电商领域的领先者。集成了复杂供应链——冷链物流、仓储自动化、最后一公里配送。SVP Operations属于C-suite级别，管理数百人运营团队。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>领导奥地利/中东欧区域的全链路运营（仓储、物流、配送）</li>
-      <li>推动自动化和数字化运营转型，提升运营效率</li>
-      <li>管理大规模运营预算和数百人团队</li>
-      <li>与采购、技术、商业团队协作推动业务增长</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>电商运营 + 供应链管理 + 高管级别。Rohlik的食品供应链非常复杂（冷链+快速配送），与能源供应链管理有相通之处。SVP级别需要深厚的运营领导经验。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Rohlik%20Operations%20Vienna&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Quantitative Commodity Researcher</div>
+<div class="job-company">Massar Capital Management, LP · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 近期发布</span>
+<span class="badge badge-quant">量化研究</span><span class="badge badge-energy">大宗商品</span>
+</div>
+<div class="salary">💰 年薪估算：€90K–150K+</div>
+<div class="score">🎯 匹配度：40%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>Massar Capital Management 是一家以量化投资为核心的全球对冲基金，总部美国，在维也纳设有研究办公室。管理规模数十亿美元，专注于商品、宏观和系统性策略。维也纳团队是其在欧洲的量化研究中心。
+<br><br>
+<strong>典型职责：</strong>开发量化商品交易策略，包括数据挖掘、因子研究、回测框架搭建。需要深厚的统计建模和大数据分析能力，聚焦能源、金属、农产品等大宗商品市场。
+</div>
+<div class="job-match">✅ 匹配点：量化分析+商品/能源市场→量化分析师证+能源背景的独特组合，薪资天花板极高</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=Massar%20Capital%20quantitative%20researcher&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 14 -->
+<!-- Job 13: EIB -->
 <div class="job-card priority-low">
-  <div class="job-header">
-    <div>
-      <div class="job-title">(Jr) Quantitative Analyst / Data Scientist</div>
-      <div class="job-company">TrueChoice Solutions, Inc.</div>
-    </div>
-    <span class="match-badge match-medium">匹配度 50%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 2周前发布</span>
-    <span>💰 预估 €55K–75K</span>
-    <span>🏷️ 量化分析</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>TrueChoice Solutions 是一家美国预测分析和市场研究技术公司，总部纽约。开发基于选择建模（Choice Modeling）的SaaS平台，帮助企业预测消费者决策。维也纳办公室是欧洲研发中心。公司规模较小，但技术壁垒高——核心算法涉及离散选择模型和贝叶斯统计。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>开发和优化离散选择模型，分析消费者偏好数据</li>
-      <li>使用R/Python进行统计建模和数据处理</li>
-      <li>参与客户项目，交付数据洞察和预测分析报告</li>
-      <li>与产品团队协作改进预测算法</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>量化分析岗位直接对应量化分析师证。但Jr级别薪资偏低，且行业（市场研究）与能源/供应链偏离。适合作为备选或过渡方案。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Quantitative%20Analyst%20TrueChoice%20Vienna&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Sector Specialist – based in Luxembourg</div>
+<div class="job-company">European Investment Bank (EIB) · 维也纳/卢森堡</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 2周前</span>
+<span class="badge badge-energy">能源/气候</span><span class="badge badge-quant">分析</span>
+</div>
+<div class="salary">💰 年薪估算：€75K–110K（免税）</div>
+<div class="score">🎯 匹配度：40%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>EIB是欧盟的长期贷款机构，总部卢森堡，是全球最大的多边贷款机构之一。专注基础设施、能源转型、气候金融等领域的项目融资。
+<br><br>
+<strong>典型职责：</strong>在能源、交通或气候领域提供行业专业知识，评估项目可行性、进行经济和财务分析、撰写投资报告。需要扎实的定量分析能力和政策理解。
+</div>
+<div class="job-match">✅ 匹配点：能源行业+量化分析+国际组织→欧盟机构，薪资免税+极佳福利，职业稳定性高</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=EIB%20sector%20specialist&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 15 -->
+<!-- Job 14: MM Group -->
 <div class="job-card priority-low">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Energy Transition Modeller</div>
-      <div class="job-company">AFRY</div>
-    </div>
-    <span class="match-badge match-medium">匹配度 65%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 1周前发布</span>
-    <span>💰 预估 €65K–85K</span>
-    <span>🏷️ 能源转型/建模</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景（同AFRY，详见Power Market Modeller）</h4>
-    <p>AFRY的能源转型团队专注于帮助政府和企业制定脱碳路径。维也纳办公室的核心业务包括：国家能源和气候计划（NECP）、可再生能源整合分析、氢能经济建模。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>构建能源系统模型，评估不同脱碳路径的技术经济可行性</li>
-      <li>分析可再生能源渗透率提升对电网和市场的影响</li>
-      <li>为客户（政府/能源企业/投资机构）提供转型策略建议</li>
-      <li>使用TIMES/LEAP/PLEXOS等能源建模工具</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>能源行业 + 量化分析 + 政策咨询 = 三位一体匹配。与Power Market Modeller岗位是姊妹岗位，建议同时投递。能源转型是欧洲未来20年最确定的增长赛道。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Energy%20Transition%20Modeller%20AFRY%20Vienna&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">IT Procurement & Vendor Manager (m/f/d)</div>
+<div class="job-company">MM Group (Mayr-Melnhof) · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 1周前</span>
+<span class="badge badge-sc">采购</span><span class="badge badge-digital">IT/数字化</span>
+</div>
+<div class="salary">💰 年薪估算：€65K–85K</div>
+<div class="score">🎯 匹配度：35%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>MM Group（Mayr-Melnhof）是欧洲领先的纸板与折叠纸盒包装制造商，总部维也纳，约13,000名员工，年收入约€4B，维也纳证券交易所上市。
+<br><br>
+<strong>典型职责：</strong>管理IT品类采购和供应商关系，包括软件许可、云服务、IT基础设施的采购策略和合同谈判。需要采购专业能力与IT品类知识的结合。
+</div>
+<div class="job-match">✅ 匹配点：采购管理+IT/数字化品类+奥地利本土上市公司→采购经验的数字化延伸</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=MM%20Group%20IT%20procurement%20vendor&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 16 -->
+<!-- Job 15: Kapsch -->
 <div class="job-card priority-low">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Senior Data Analyst*</div>
-      <div class="job-company">b.telligent Romania (Vienna Office)</div>
-    </div>
-    <span class="match-badge match-medium">匹配度 50%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 1个月前发布</span>
-    <span>💰 预估 €60K–80K</span>
-    <span>🏷️ 数据分析</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>b.telligent 是德国领先的数据分析和管理咨询公司，在慕尼黑、维也纳、苏黎世等地设有办公室。专注于BI、数据仓库、高级分析和AI解决方案。客户涵盖零售、金融、电信等行业。维也纳团队服务于中东欧市场。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>为客户交付数据分析项目，从需求分析到Dashboard落地</li>
-      <li>使用SQL/Python/Tableau进行数据处理和可视化</li>
-      <li>参与数据战略咨询，帮助客户建立数据驱动决策能力</li>
-      <li>与数据工程师协作搭建数据管道</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>数据分析技能匹配量化分析师证。但行业跨度较大（非能源/供应链），适合作为技能过渡型岗位。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Senior%20Data%20Analyst%20b.telligent%20Vienna&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Procurement Specialist (all genders)</div>
+<div class="job-company">Kapsch Group · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳 Innere Stadt</span><span>🕐 2天前</span>
+<span class="badge badge-sc">采购</span>
+</div>
+<div class="salary">💰 年薪估算：€55K–72K</div>
+<div class="score">🎯 匹配度：35%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>Kapsch Group 总部维也纳，是奥地利知名的电信和交通远程信息处理技术公司。全球业务遍布30+国家，在智能交通系统（ITS）、收费系统、铁路通信等领域处于领先地位。
+<br><br>
+<strong>典型职责：</strong>负责集团采购运营，管理供应商关系、谈判合同条款、优化采购流程。涉及技术设备、软件服务等多品类采购。
+</div>
+<div class="job-match">✅ 匹配点：采购管理+奥地利本土企业+科技行业→传统奥地利企业，稳定且文化融入度高</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=Kapsch%20procurement%20specialist&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 17 -->
+<!-- Job 16: Rohlik -->
 <div class="job-card priority-low">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Technical Purchaser (Vienna, Austria)</div>
-      <div class="job-company">Badger Meter</div>
-    </div>
-    <span class="match-badge match-medium">匹配度 55%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳 Innere Stadt</span>
-    <span>🕐 1周前发布</span>
-    <span>💰 预估 €55K–75K</span>
-    <span>🏷️ 技术采购</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景</h4>
-    <p>Badger Meter 是一家美国流量测量和控制技术公司，纽约证券交易所上市（BMI），成立于1905年。产品涵盖水表、流量计和智能水管理解决方案。全球约2,000名员工。在能源/公用事业（水务）领域有深入应用，维也纳办公室服务于中欧市场。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>负责精密仪表组件和电子元器件的技术采购</li>
-      <li>评估供应商技术能力和质量体系</li>
-      <li>管理采购合同和交付时间表</li>
-      <li>与工程团队协作进行供应商技术评审</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>技术采购 + 公用事业相关行业 + 维也纳中心位置。采购管理经验可复用，但行业（水务计量）与能源供应链有偏差。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=Technical%20Purchaser%20Badger%20Meter%20Vienna&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
+<div class="job-title">Head of Strategic Partnerships & Ecosystem</div>
+<div class="job-company">Rohlik Group · 维也纳</div>
+<div class="job-meta">
+<span>📍 奥地利 维也纳</span><span>🕐 5天前</span>
+<span class="badge badge-digital">电商</span><span class="badge badge-mgmt">管理</span>
+</div>
+<div class="salary">💰 年薪估算：€80K–120K</div>
+<div class="score">🎯 匹配度：28%</div>
+<div class="job-desc">
+<strong>公司背景：</strong>Rohlik Group 是中东欧领先的在线杂货配送平台，总部布拉格，在奥地利以gurkerl.at品牌运营。约5,000+员工，覆盖捷克、奥地利、匈牙利、德国等市场。
+<br><br>
+<strong>典型职责：</strong>领导战略合作伙伴关系和生态体系建设，包括供应商合作、品牌联动、技术平台集成。需要商业拓展和战略思维。
+</div>
+<div class="job-match">✅ 匹配点：电商运营+管理层级+战略思维→电商领域的战略管理岗位，与供应链经验互补</div>
+<a class="job-link" href="https://www.linkedin.com/jobs/search/?keywords=Rohlik%20strategic%20partnerships&location=Wien%2C%20%C3%96sterreich" target="_blank">🔗 LinkedIn 搜索此岗位 →</a>
 </div>
 
-<!-- Job 18 -->
-<div class="job-card priority-low">
-  <div class="job-header">
-    <div>
-      <div class="job-title">Senior Projektleiter:in Business Excellence & Transformation (BEAT)</div>
-      <div class="job-company">PÜSPÖK Erneuerbare Energie</div>
-    </div>
-    <span class="match-badge match-medium">匹配度 60%</span>
-  </div>
-  <div class="job-meta">
-    <span>📍 奥地利 维也纳</span>
-    <span>🕐 5个月前发布</span>
-    <span>💰 预估 €70K–95K</span>
-    <span>🏷️ 能源转型</span>
-  </div>
-  <div class="company-section">
-    <h4>🏢 公司背景（同PÜSPÖK）</h4>
-    <p>Business Excellence & Transformation角色通常负责推动组织流程优化、数字化转型和卓越运营。在可再生能源企业，这可能包括项目交付效率提升、运营流程自动化、供应链数字化转型等。与用户管理+供应链数字化经验高度相关。</p>
-  </div>
-  <div class="jd-section">
-    <h4>📋 典型岗位职责（行业推断）</h4>
-    <ul>
-      <li>领导跨部门转型项目，推动运营卓越和流程再造</li>
-      <li>引入精益/六西格玛方法优化项目交付和供应链效率</li>
-      <li>管理变革管理，协调各利益相关方</li>
-      <li>建立KPI体系和持续改进文化</li>
-    </ul>
-  </div>
-  <p style="font-size:14px;margin-top:10px"><strong>✅ 匹配点：</strong>可再生能源 + 运营管理 + 转型项目经验。但发布5个月可能已招到人，建议关注PÜSPÖK是否有新类似岗位。</p>
-  <a class="apply-btn" href="https://www.linkedin.com/jobs/search/?keywords=P%C3%9CSP%C3%96K%20Transformation&location=Wien%2C%20%C3%96sterreich" target="_blank">🔍 LinkedIn搜索此岗位</a>
-</div>
-
-<!-- ═══════════ 汇总表格 ═══════════ -->
-<hr>
-<h2 class="section-title">📊 全部岗位汇总</h2>
-<div style="overflow-x:auto;">
-<table class="summary-table">
-  <thead>
-    <tr>
-      <th>优先级</th>
-      <th>公司</th>
-      <th>职位</th>
-      <th>匹配度</th>
-      <th>时效</th>
-      <th>年薪估算</th>
-      <th>行业</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="pri-high">
-      <td>🔥🔥🔥</td>
-      <td>ANDRITZ 安德里茨</td>
-      <td>Divison and Project Procurement Manager</td>
-      <td><strong>85%</strong></td>
-      <td>🆕 3天前</td>
-      <td>€75K–100K</td>
-      <td>能源/工业EPC</td>
-    </tr>
-    <tr class="pri-high">
-      <td>🔥🔥🔥</td>
-      <td>PÜSPÖK Erneuerbare Energie</td>
-      <td>Technische:r Einkäufer:in</td>
-      <td><strong>75%</strong></td>
-      <td>3个月前</td>
-      <td>€55K–75K</td>
-      <td>可再生能源</td>
-    </tr>
-    <tr class="pri-high">
-      <td>🔥🔥🔥</td>
-      <td>Beyond Gravity</td>
-      <td>Project Lead Buyer</td>
-      <td><strong>70%</strong></td>
-      <td>🆕 4天前</td>
-      <td>€65K–90K</td>
-      <td>航天/高科技</td>
-    </tr>
-    <tr class="pri-high">
-      <td>🔥🔥🔥</td>
-      <td>Critical Software</td>
-      <td>BD Director – Energy</td>
-      <td><strong>70%</strong></td>
-      <td>2周前</td>
-      <td>€100K–140K</td>
-      <td>能源软件</td>
-    </tr>
-    <tr class="pri-high">
-      <td>🔥🔥🔥</td>
-      <td>AFRY</td>
-      <td>Power Market Modeller</td>
-      <td><strong>70%</strong></td>
-      <td>1周前</td>
-      <td>€65K–85K</td>
-      <td>能源咨询</td>
-    </tr>
-    <tr class="pri-high">
-      <td>🔥🔥</td>
-      <td>PÜSPÖK Erneuerbare Energie</td>
-      <td>AI Lead</td>
-      <td><strong>65%</strong></td>
-      <td>2周前</td>
-      <td>€75K–100K</td>
-      <td>可再生能源+AI</td>
-    </tr>
-    <tr class="pri-med">
-      <td>🔥🔥</td>
-      <td>Gebauer & Griller</td>
-      <td>Global Category Manager Directs</td>
-      <td><strong>70%</strong></td>
-      <td>2周前</td>
-      <td>€70K–95K</td>
-      <td>汽车/工业</td>
-    </tr>
-    <tr class="pri-med">
-      <td>🔥🔥</td>
-      <td>Interpath</td>
-      <td>Manager, Supply Chain Consulting</td>
-      <td><strong>70%</strong></td>
-      <td>5个月前</td>
-      <td>€75K–110K</td>
-      <td>供应链咨询</td>
-    </tr>
-    <tr class="pri-med">
-      <td>🔥🔥</td>
-      <td>Iventa</td>
-      <td>Teamlead Operativer Einkauf</td>
-      <td><strong>70%</strong></td>
-      <td>🆕 1周前</td>
-      <td>€65K–85K</td>
-      <td>采购管理</td>
-    </tr>
-    <tr class="pri-med">
-      <td>🔥🔥</td>
-      <td>Inverto | BCG</td>
-      <td>(Associate) Consultant Procurement/SCM</td>
-      <td><strong>65%</strong></td>
-      <td>2周前</td>
-      <td>€65K–100K</td>
-      <td>采购咨询</td>
-    </tr>
-    <tr class="pri-med">
-      <td>🔥🔥</td>
-      <td>AFRY</td>
-      <td>Energy Transition Modeller</td>
-      <td><strong>65%</strong></td>
-      <td>1周前</td>
-      <td>€65K–85K</td>
-      <td>能源转型咨询</td>
-    </tr>
-    <tr class="pri-med">
-      <td>🔥🔥</td>
-      <td>PÜSPÖK Erneuerbare Energie</td>
-      <td>Senior Projektleiter:in BEAT</td>
-      <td><strong>60%</strong></td>
-      <td>5个月前</td>
-      <td>€70K–95K</td>
-      <td>可再生能源</td>
-    </tr>
-    <tr class="pri-low">
-      <td>🔥</td>
-      <td>IAEA</td>
-      <td>Purchasing Assistant (G5)</td>
-      <td><strong>60%</strong></td>
-      <td>1周前</td>
-      <td>€55K–70K (免税)</td>
-      <td>联合国/核能</td>
-    </tr>
-    <tr class="pri-low">
-      <td>🔥</td>
-      <td>Rohlik Group</td>
-      <td>SVP Operations</td>
-      <td><strong>55%</strong></td>
-      <td>近期</td>
-      <td>€130K–180K+</td>
-      <td>电商/食品供应链</td>
-    </tr>
-    <tr class="pri-low">
-      <td>🔥</td>
-      <td>AGES</td>
-      <td>IT Procurement Manager:in</td>
-      <td><strong>55%</strong></td>
-      <td>1周前</td>
-      <td>€60K–80K</td>
-      <td>公共部门/IT采购</td>
-    </tr>
-    <tr class="pri-low">
-      <td>🔥</td>
-      <td>Badger Meter</td>
-      <td>Technical Purchaser</td>
-      <td><strong>55%</strong></td>
-      <td>1周前</td>
-      <td>€55K–75K</td>
-      <td>仪表/公用事业</td>
-    </tr>
-    <tr class="pri-low">
-      <td>🔥</td>
-      <td>TrueChoice Solutions</td>
-      <td>(Jr) Quantitative Analyst / Data Scientist</td>
-      <td><strong>50%</strong></td>
-      <td>2周前</td>
-      <td>€55K–75K</td>
-      <td>量化分析</td>
-    </tr>
-    <tr class="pri-low">
-      <td>🔥</td>
-      <td>b.telligent</td>
-      <td>Senior Data Analyst*</td>
-      <td><strong>50%</strong></td>
-      <td>1个月前</td>
-      <td>€60K–80K</td>
-      <td>数据分析咨询</td>
-    </tr>
-  </tbody>
+<!-- Summary Table -->
+<h2 class="section-title">📊 汇总表格</h2>
+<table>
+<thead>
+<tr><th>优先级</th><th>公司</th><th>职位</th><th>匹配度</th><th>时效</th><th>年薪估算</th></tr>
+</thead>
+<tbody>
+<tr><td>🔴 高</td><td>Borealis</td><td>Group Expert Digitalization – Produce to Supply</td><td>73%</td><td>近期</td><td>€70K–95K</td></tr>
+<tr><td>🔴 高</td><td>McKinsey</td><td>Experienced Consultant – Procurement</td><td>55%</td><td>2周前</td><td>€90K–140K+</td></tr>
+<tr><td>🔴 高</td><td>Vaillant Group</td><td>Supply Chain & Purchasing Specialist</td><td>50%</td><td>1月前</td><td>€55K–75K</td></tr>
+<tr><td>🔴 高</td><td>Marsh</td><td>Broker – Construction & Energy & Power</td><td>50%</td><td>近期</td><td>€70K–100K</td></tr>
+<tr><td>🔴 高</td><td>waterdrop®</td><td>Supply Planner</td><td>45%</td><td>1天前</td><td>€50K–70K</td></tr>
+<tr><td>🔴 高</td><td>BCG</td><td>Consultant Risk & Compliance – Energy Trading</td><td>40%</td><td>近期</td><td>€85K–130K+</td></tr>
+<tr><td>🟡 中</td><td>Octapharma</td><td>Group Senior Expert SCM Excellence – Procurement</td><td>40%</td><td>近期</td><td>€80K–110K</td></tr>
+<tr><td>🟡 中</td><td>Interpath</td><td>Manager Procurement Consulting</td><td>40%</td><td>2月前</td><td>€70K–95K</td></tr>
+<tr><td>🟡 中</td><td>Beyond Gravity</td><td>Project Lead Buyer</td><td>40%</td><td>2周前</td><td>€65K–85K</td></tr>
+<tr><td>🟡 中</td><td>Mercury</td><td>Logistics Manager</td><td>40%</td><td>1周前</td><td>€65K–85K</td></tr>
+<tr><td>🟡 中</td><td>BYD EUROPE</td><td>Flash Charging Acquisition Manager</td><td>40%</td><td>5月前</td><td>€70K–95K</td></tr>
+<tr><td>⚪ 低</td><td>Massar Capital</td><td>Quantitative Commodity Researcher</td><td>40%</td><td>近期</td><td>€90K–150K+</td></tr>
+<tr><td>⚪ 低</td><td>EIB</td><td>Sector Specialist</td><td>40%</td><td>2周前</td><td>€75K–110K*</td></tr>
+<tr><td>⚪ 低</td><td>MM Group</td><td>IT Procurement & Vendor Manager</td><td>35%</td><td>1周前</td><td>€65K–85K</td></tr>
+<tr><td>⚪ 低</td><td>Kapsch Group</td><td>Procurement Specialist</td><td>35%</td><td>2天前</td><td>€55K–72K</td></tr>
+<tr><td>⚪ 低</td><td>Rohlik Group</td><td>Head of Strategic Partnerships</td><td>28%</td><td>5天前</td><td>€80K–120K</td></tr>
+</tbody>
 </table>
+<p style="font-size:0.85em;color:var(--muted)">* EIB薪资通常免税，实际购买力相当于市场薪资的1.3-1.5倍</p>
+
+<!-- Advice Section -->
+<h2 class="section-title">💡 行动建议</h2>
+
+<div class="advice-box">
+<h3>🎯 本周重点推荐</h3>
+<ul>
+<li><strong>🔥 Borealis – Group Expert Digitalization Produce to Supply</strong>：能源+供应链+数字化的三重交叉，且总部在维也纳。这是本周最匹配的岗位，建议优先投递。Borealis正在推进全链路数字化，你的供应链管理+电商数字化运营+量化分析能力是完美组合。</li>
+<li><strong>🔥 Marsh – Energy & Power Broker</strong>：能源项目风险管理是供应链的上游延伸，Marsh在维也纳的Energy & Power团队小而精。这个方向在德语区非常罕见，竞争可能较小。</li>
+<li><strong>🔥 waterdrop® – Supply Planner</strong>：1天前发布，新鲜度最高。D2C电商的供应链规划高度依赖数据分析，你的电商运营+量化背景是差异化优势。</li>
+</ul>
 </div>
 
-<!-- ═══════════ 行动建议 ═══════════ -->
-<hr>
-<h2 class="section-title">🎯 本周行动建议</h2>
-
-<div class="note-box" style="background:#DBEAFE;color:#1E40AF;">
-  <strong>🔴 高优先级（本周内投递）：</strong><br>
-  1. <strong>ANDRITZ – Project Procurement Manager</strong>：3天前发布，大公司+能源+采购=完美三重匹配。建议直接准备德语+英语双简历。<br>
-  2. <strong>Beyond Gravity – Project Lead Buyer</strong>：4天前发布，竞争少。航天供应链经验独特，面试时有差异化优势。<br>
-  3. <strong>AFRY – Power Market Modeller + Energy Transition Modeller</strong>：两个岗位同时投递，展示量化+能源double skillset。<br>
-  4. <strong>PÜSPÖK – AI Lead</strong>：可再生能源+AI，定位独特，竞争可能较少。
+<div class="advice-box">
+<h3>📝 申请策略</h3>
+<ul>
+<li><strong>德语能力</strong>：大部分岗位标注 m/w/d 或 (m/f/d)，说明工作语言以德语为主。CV和Cover Letter建议准备德语版本。德语B2以上会显著提高邀请率。</li>
+<li><strong>咨询路径</strong>：McKinsey和BCG的Procurement/SCM咨询岗位是职业转型的黄金跳板——2-3年咨询经验后重返甲方通常能直接晋升高管层级。但竞争激烈，需要充分的Case Interview准备。</li>
+<li><strong>奥地利工签（Rot-Weiß-Rot Card）</strong>：供应链经理/采购经理属于奥地利紧缺职业清单（Mangelberuf），满足薪资门槛（2026年约€46K+/年）即可申请。你的背景远超门槛。</li>
+<li><strong>优先级排序</strong>：Borealis > Marsh > McKinsey/BCG > waterdrop® > 其他。前两个是能源+供应链的完美交叉，后两个是职业加速器。</li>
+</ul>
 </div>
 
-<div class="note-box">
-  <strong>🟡 中优先级（本周/下周投递）：</strong><br>
-  5. <strong>Gebauer & Griller – Global Category Manager</strong>：奥地利本土企业，全球化采购管理。<br>
-  6. <strong>Iventa – Teamlead Operativer Einkauf</strong>：直接匹配管理经验。<br>
-  7. <strong>Inverto/BCG – Procurement Consultant</strong>：BCG品牌加持，咨询路线。<br>
-  8. <strong>IAEA – Purchasing Assistant</strong>：UN免税薪资+金饭碗，作为稳定选项。
+<div class="advice-box">
+<h3>🇦🇹 奥地利就业市场观察</h3>
+<ul>
+<li><strong>能源转型红利</strong>：奥地利政府目标2040年碳中和，能源基础设施投资持续增长。APG、Verbund、Siemens Energy、Borealis等公司持续招聘供应链相关人才。</li>
+<li><strong>维也纳作为区域总部</strong>：越来越多国际公司（BYD、Marsh、BCG、McKinsey）把维也纳作为中东欧区域总部，非德语母语者的机会在增加。</li>
+<li><strong>量化人才稀缺</strong>：Massar Capital在维也纳设量化研究办公室说明当地量化人才供给不足，你的量化分析师证是真正的稀缺资产。</li>
+<li><strong>薪资水平</strong>：维也纳薪资低于慕尼黑/苏黎世但高于柏林/布拉格，考虑购买力平价（低房租+高质量公共服务），实际生活质量很高。</li>
+</ul>
 </div>
 
-<div class="note-box" style="background:#F1F5F9;color:#475569;">
-  <strong>📌 德语/签证提示：</strong><br>
-  • 奥地利 <strong>Rot-Weiß-Rot Card</strong>（红白红卡）适合高技能移民，供应链经理在紧缺职业列表（Mangelberuf）中。<br>
-  • 企业岗（ANDRITZ、Gebauer & Griller）：德语B1-B2是加分项，英语工作环境较普遍。<br>
-  • 公共部门（AGES）：德语要求B2+，需提供德语简历。<br>
-  • UN（IAEA）：英语即可，德语非必需。<br>
-  • 薪资水平：维也纳生活成本低于慕尼黑/苏黎世，€70K年薪可享舒适生活。
-</div>
-
-<div class="note-box" style="background:#D1FAE5;color:#065F46;">
-  <strong>💡 策略建议：</strong><br>
-  ① <strong>第一志愿</strong>：ANDRITZ（能源EPC巨头）+ AFRY（能源咨询）= 能源供应链核心赛道<br>
-  ② <strong>差异化路线</strong>：Beyond Gravity（航天供应链）+ PÜSPÖK（可再生能源AI）= 展示跨行业供应链管理能力<br>
-  ③ <strong>咨询路线</strong>：Inverto/BCG + Interpath = 利用能源+供应链经验进入顶级咨询<br>
-  ④ <strong>稳定路线</strong>：IAEA + AGES = 维也纳公共部门/UN系统
-</div>
-
-<!-- ═══════════ 重要说明 ═══════════ -->
-<div class="note-box">
-  <strong>📌 重要说明：</strong><br>
-  ① 年薪为基于维也纳市场行情的估算，非官方薪资范围。<br>
-  ② 岗位职责描述基于岗位名称和公司类型的行业典型要求，非 LinkedIn 原文（LinkedIn 需登录查看完整 JD）。<br>
-  ③ 点击"LinkedIn搜索"按钮登录后即可看到完整职位描述和直接投递入口。<br>
-  ④ 数据采集时间：2026年8月3日（周一）。岗位可能随时下架。<br>
-  ⑤ 本次共搜索10个关键词维度，浏览5,000+岗位，精选18个匹配岗位。已调研8家新公司背景。
+<!-- Footer -->
+<div class="footer">
+<p>📊 数据来源：LinkedIn Jobs · 搜索覆盖10组关键词 · 采集于2026年7月27日</p>
+<p>🤖 由 Hermes Agent 自动生成 · 基于deepseek-v4-pro</p>
+<p>🔗 公网访问：<a href="https://rhea0419.github.io/austria-jobs-report/" target="_blank">rhea0419.github.io/austria-jobs-report/</a></p>
+<p style="margin-top:8px;">⚠️ 免责声明：岗位信息来自LinkedIn公开搜索结果，未登录状态下可查看。年薪估算基于维也纳市场行情，实际薪资以JD为准。</p>
 </div>
 
 </div>
-
-<footer>
-  <p>🇦🇹 数据来源：LinkedIn Jobs · 采集时间 2026-08-03 09:00 CEST</p>
-  <p>采购研究中心 · 内部参考资料 · 每周一更新</p>
-</footer>
 </body>
 </html>
